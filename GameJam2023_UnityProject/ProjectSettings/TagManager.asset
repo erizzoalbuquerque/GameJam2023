@@ -8,7 +8,7 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Player
   - Water
   - UI
   - 
@@ -40,6 +40,9 @@ TagManager:
   m_SortingLayers:
   - name: Background
     uniqueID: 1100525163
+    locked: 0
+  - name: Props
+    uniqueID: 475321909
     locked: 0
   - name: Default
     uniqueID: 0
