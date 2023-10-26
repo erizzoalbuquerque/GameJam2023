@@ -10,7 +10,7 @@ public class PlayerVisual : MonoBehaviour
     Vector3 _startScale;
     Vector3 _lastVelocity;
 
-    
+    [SerializeField] Animator _animator;
 
     // Start is called before the first frame update
     void Start()
@@ -28,6 +28,40 @@ public class PlayerVisual : MonoBehaviour
         else if (_lastVelocity.x <= 0f && _playerMovement.CurrentVelocity.x > 0f )
         {
             Flip(true);
+        }
+
+        if ( _playerMovement.IsBreaking)
+        {
+            _animator.SetBool("Break", true);
+            _animator.SetBool("Walk", false);
+        }
+        else 
+        {
+            _animator.SetBool("Break", false);
+        }
+
+        if (_playerMovement.CurrentVelocity.x > 0.2f)
+        {
+            _animator.SetBool("Walk", true);
+        }
+        if (_playerMovement.CurrentVelocity.y > 0.5f)
+        {
+            _animator.SetBool("Walk", true);
+        }
+        if (_playerMovement.CurrentVelocity.x < -0.2f)
+        {
+            _animator.SetBool("Walk", true);
+        }
+        if (_playerMovement.CurrentVelocity.y < -0.5f)
+        {
+            _animator.SetBool("Walk", true);
+        }
+        if (_playerMovement.CurrentVelocity.x == 0f)
+        {
+            if (_playerMovement.CurrentVelocity. y == 0f)
+            {
+                _animator.SetBool("Walk", false);
+            }
         }
     }
 
