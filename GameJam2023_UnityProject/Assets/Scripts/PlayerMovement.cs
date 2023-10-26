@@ -19,9 +19,11 @@ public class PlayerMovement : MonoBehaviour
     Rigidbody2D _rb;
     Vector2 _currentVelocity;
     Vector2 _currentInput;
+    bool _isBreaking = false;
 
     public Vector2 CurrentVelocity { get => _currentVelocity;}
     public Vector2 CurrentInput { get => _currentInput;}
+    public bool IsBreaking { get => _isBreaking; }
 
     void Awake()
     {
@@ -48,12 +50,16 @@ public class PlayerMovement : MonoBehaviour
         {
             //Player wants to brake
             newVelocity = currentVelocity.normalized * Mathf.MoveTowards(currentSpeed, 0f, _brakeAcceleration * Time.deltaTime);
+
+            _isBreaking = true;
         }
         else
         {
             //Player wants to turn
             Vector2 desiredVelocity = _maxSpeed * _currentInput.normalized;
             newVelocity = Vector3.RotateTowards(currentVelocity, desiredVelocity, _turningSpeed * Time.deltaTime, _maxAcceleration * Time.deltaTime);
+            
+            _isBreaking = false;
         }        
 		
         _rb.velocity = newVelocity;
