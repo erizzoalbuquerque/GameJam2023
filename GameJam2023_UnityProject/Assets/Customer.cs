@@ -3,31 +3,45 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class Customer : MonoBehaviour
 {
+    [SerializeField] Table receiveTable; // Delete later
+    [SerializeField] List<CustomerTask> _possibleTasks;
+    [SerializeField] int maxTasks = 3;
+
     enum State
     {
         WalkingToTable,
         DoingTasks,
         Leaving,
         Dying,
-    } 
+    }
 
-    public List<CustomerTask> _tasks;
+    List<CustomerTask> _tasks;
     CustomerTask _currentTask;
     State _state;
     Table _table;
 
+    bool _initialized = false;
+
     // Start is called before the first frame update
     void Start()
     {
-        Setup();
+        _tasks = new List<CustomerTask>();
+
+        Initialize(receiveTable);
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (_initialized == false)
+        {
+            return;
+        }
+
         switch (_state)
         {
             case State.WalkingToTable:
@@ -46,14 +60,30 @@ public class Customer : MonoBehaviour
         }
     }
 
-    void Setup()
+    public void Initialize(Table table)
     {
         _state = State.WalkingToTable;
+        _table = table; // TableManager.reserveTable();
+
+        InitializeTasks();
+
+        _initialized = true;
+    }
+
+    void InitializeTasks()
+    {
+        int numTasks = Random.Range(1, maxTasks);
+
+        for (int i = 0; i < numTasks; i++)
+        {
+            int index = Random.Range(0, _possibleTasks.Count);
+            _tasks.Add(_possibleTasks[index]);
+        }
     }
 
     void WalkToTable()
     {
-        this.transform.position =  _table.GetSeatPosition();
+        //this.transform.position = _table.GetSeatPosition();
         _state = State.DoingTasks;
     }
 

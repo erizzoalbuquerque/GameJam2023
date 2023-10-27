@@ -5,30 +5,39 @@ using System.Net.NetworkInformation;
 using Unity.VisualScripting.Antlr3.Runtime;
 using UnityEngine;
 
-[Serializable]
+[CreateAssetMenu(menuName = "ScriptableObjects/FoodTask")]
 public class FoodTask : CustomerTask
 {
-    [SerializeField] float _timeToFail = 20f;
-    [SerializeField] float _timeToEat = 10f;
-    [SerializeField] float _payment = 100f;
     [SerializeField] Food _food;
+
+    float _timeToFail = 20f;
+    float _timeToEat = 10f;
+    float _payment = 100f;
     
     State _state;
     float _waitingStartTime;
     float _eatingStartTime;
 
-    enum State {WaitingFood, Eating}
+    enum State
+    {
+        WaitingFood,
+        Eating
+    }
 
     public override void Start()
     {
         float _startTime = Time.time;
         _state = State.WaitingFood;
+
+        Debug.Log("Starting task: " + _food.name);
     }
 
     public override void Update()
     {
         if (_isDone == true)
+        {
             return;
+        }
 
         switch (_state)
         {
@@ -68,10 +77,18 @@ public class FoodTask : CustomerTask
         _success = true;
     }
 
+    void ReceiveFood()
+    {
+        float _eatingStartTime = Time.time;
+        _state = State.Eating;
+        Pay();
+    }
+
     void Pay()
     {
-        //Increase Score
-        Debug.Log("Received Money");
+        // Increase Player Score (Global)
+        // Display UI money (delay)
+        Debug.Log("Received Money " + this._food.Price.ToString());
     }
 
     public override void Finish()
@@ -81,13 +98,6 @@ public class FoodTask : CustomerTask
 
     public override void Interact()
     {
-        _state = State.Eating;
-        Pay();        
+        ReceiveFood();
     }
-}
-
-
-public class Food
-{
-    string name;
 }
