@@ -24,6 +24,7 @@ public class FoodTask : CustomerTask
 
     public override void Start()
     {
+        // Why the hell do we need this!
         _isDone = false;
 
         float _startTime = Time.time;
@@ -34,9 +35,6 @@ public class FoodTask : CustomerTask
 
     public override void Execute()
     {
-        Debug.Log(_state);
-        Debug.Log(_isDone);
-
         if (_isDone == true)
         {
             return;
@@ -58,9 +56,7 @@ public class FoodTask : CustomerTask
             case State.Eating:
                 if (Time.time - _eatingStartTime < _food.AvgConsumeTime)
                 {
-                    //Do Something;
-                    Debug.Log(Time.time - _eatingStartTime);
-                    Debug.Log(_food.AvgConsumeTime);
+                    Debug.Log("Eating " + _food.FoodName);
                 }
                 else
                 {

@@ -63,13 +63,7 @@ public class Customer : MonoBehaviour
         _state = State.WalkingToTable;
         _table = table; // TableManager.reserveTable();
 
-        InitializeTasks();
-
-        _initialized = true;
-    }
-
-    void InitializeTasks()
-    {
+        // Initialize Tasks
         int numTasks = Random.Range(1, maxTasks);
 
         for (int i = 0; i < numTasks; i++)
@@ -77,6 +71,8 @@ public class Customer : MonoBehaviour
             int index = Random.Range(0, _possibleTasks.Count);
             _tasks.Add(_possibleTasks[index]);
         }
+
+        _initialized = true;
     }
 
     void WalkToTable()
@@ -87,20 +83,16 @@ public class Customer : MonoBehaviour
 
     void DoTasks()
     {
-        Debug.Log("Do Tasks");
-        Debug.Log(_tasks.Count);
-
-        //Check if there's any remaining task
         if (_tasks.Count == 0)
         {
-            //There's nothing more to do, time to leave.
-            _state = State.Leaving;
+            Leave();
             return;
         }
 
         if (_currentTask == null)
         {
-            StarNewTask();
+            _currentTask = _tasks[0];
+            _currentTask.Start();
         }
 
         if (_currentTask.IsDone == true)
@@ -109,7 +101,7 @@ public class Customer : MonoBehaviour
 
             if (_currentTask.Success == false)
             {
-                _state = State.Leaving;
+                Leave();
                 return;
 
             } else
@@ -124,10 +116,11 @@ public class Customer : MonoBehaviour
         }
     }
 
-    void StarNewTask()
+    void Leave()
     {
-        _currentTask = _tasks[0];
-        _currentTask.Start();
+        _state = State.Leaving;
+
+        Debug.Log("Leaving");
     }
 
     [ContextMenu("DeliverFood")]
