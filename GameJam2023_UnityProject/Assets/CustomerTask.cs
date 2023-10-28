@@ -3,8 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "ScriptableObjects/CustomerTask")]
-public abstract class CustomerTask : ScriptableObject
+public abstract class CustomerTask : MonoBehaviour
 {
     public bool IsDone { get => _isDone;}
     public bool Success { get => _success;}

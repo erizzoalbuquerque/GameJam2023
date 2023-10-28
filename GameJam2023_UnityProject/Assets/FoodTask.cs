@@ -5,7 +5,6 @@ using System.Net.NetworkInformation;
 using Unity.VisualScripting.Antlr3.Runtime;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "ScriptableObjects/FoodTask")]
 public class FoodTask : CustomerTask
 {
     [SerializeField] Food _food;
@@ -30,7 +29,7 @@ public class FoodTask : CustomerTask
         float _startTime = Time.time;
         _state = State.WaitingFood;
 
-        Debug.Log("Starting task: " + _food.name);
+        Debug.Log("Starting task: Waiting for " + _food.name);
     }
 
     public override void Execute()
@@ -84,7 +83,7 @@ public class FoodTask : CustomerTask
 
     void ReceiveFood()
     {
-        float _eatingStartTime = Time.time;
+        _eatingStartTime = Time.time;
         _state = State.Eating;
         Pay();
     }

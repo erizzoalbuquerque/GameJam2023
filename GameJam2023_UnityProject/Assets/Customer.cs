@@ -71,7 +71,10 @@ public class Customer : MonoBehaviour
         for (int i = 0; i < numTasks; i++)
         {
             int index = Random.Range(0, _possibleTasks.Count);
-            _tasks.Add(_possibleTasks[index]);
+
+            CustomerTask task = Instantiate(_possibleTasks[index], gameObject.transform);
+
+            _tasks.Add(task);
         }
 
         _initialized = true;
