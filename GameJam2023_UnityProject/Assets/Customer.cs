@@ -10,6 +10,7 @@ public class Customer : MonoBehaviour
     [SerializeField] Table receiveTable; // Delete later
     [SerializeField] List<CustomerTask> _possibleTasks;
     [SerializeField] int maxTasks = 3;
+    [SerializeField] float walkSpeed = 10f;
 
     enum State
     {
@@ -51,6 +52,7 @@ public class Customer : MonoBehaviour
                 break;
 
             case State.Leaving:
+                WalkOut();
                 break;
 
             case State.Dying:
@@ -77,8 +79,16 @@ public class Customer : MonoBehaviour
 
     void WalkToTable()
     {
-        this.transform.position = _table.GetSeatPosition();
-        _state = State.DoingTasks;
+        Vector3 seatDirection = _table.GetSeatPosition() - this.transform.position;
+
+        this.transform.Translate(seatDirection.normalized * walkSpeed * Time.deltaTime);
+
+        Vector3 updatedSeatDirection = _table.GetSeatPosition() - this.transform.position;
+
+        if (updatedSeatDirection.magnitude < 0.1f)
+        {
+            _state = State.DoingTasks;
+        }
     }
 
     void DoTasks()
@@ -121,6 +131,16 @@ public class Customer : MonoBehaviour
         _state = State.Leaving;
 
         Debug.Log("Leaving");
+    }
+
+    void WalkOut()
+    {
+        this.transform.Translate(Vector3.right * walkSpeed * Time.deltaTime);
+
+        if (this.transform.position.x > 30f)
+        {
+            Destroy(gameObject);
+        }
     }
 
     [ContextMenu("DeliverFood")]
