@@ -22,11 +22,11 @@ public class FoodTask : CustomerTask
         Eating
     }
 
-    public override void Start()
+    public override void Initialize()
     {
         _state = State.WaitingFood;
 
-        Debug.Log("Starting task: Waiting for " + _food.name);
+        Debug.Log("Initializing task: Waiting for " + _food.name);
     }
 
     public override void Execute()

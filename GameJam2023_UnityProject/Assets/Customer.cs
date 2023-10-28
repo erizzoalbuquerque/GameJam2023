@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 using UnityEngine;
 using Random = UnityEngine.Random;
@@ -63,7 +64,8 @@ public class Customer : MonoBehaviour
     void Initialize(Table table)
     {
         _state = State.WalkingToTable;
-        _table = table; // TableManager.reserveTable();
+        _table = table;
+        _table.Reserve(this);
 
         // Initialize Tasks
         int numTasks = Random.Range(1, maxTasks);
@@ -105,7 +107,7 @@ public class Customer : MonoBehaviour
         if (_currentTask == null)
         {
             _currentTask = _tasks[0];
-            _currentTask.Start();
+            _currentTask.Initialize();
         }
 
         if (_currentTask.IsDone == true)
