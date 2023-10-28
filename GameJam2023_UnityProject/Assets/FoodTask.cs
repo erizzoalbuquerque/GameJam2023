@@ -10,10 +10,11 @@ public class FoodTask : CustomerTask
     [SerializeField] Food _food;
 
     float _timeToFail = 10f;
-    
-    State _state;
+
     float _waitingStartTime;
     float _eatingStartTime;
+
+    State _state;
 
     enum State
     {
@@ -23,10 +24,6 @@ public class FoodTask : CustomerTask
 
     public override void Start()
     {
-        // Why the hell do we need this!
-        _isDone = false;
-
-        float _startTime = Time.time;
         _state = State.WaitingFood;
 
         Debug.Log("Starting task: Waiting for " + _food.name);
@@ -92,6 +89,7 @@ public class FoodTask : CustomerTask
     {
         // Increase Player Score (Global)
         // Display UI money (delay)
+        GameManager.Instance.addScore(this._food.Price);
         Debug.Log("Received Money " + this._food.Price.ToString());
     }
 
