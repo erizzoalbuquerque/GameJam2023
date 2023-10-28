@@ -100,7 +100,7 @@ GameObject:
   - component: {fileID: 1207953172955517795}
   m_Layer: 3
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -173,10 +173,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9190ecab7e2b8b41b1bb5bb627cc73e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxSpeed: 10
+  _maxSpeed: 15
   _turningSpeed: 5
-  _maxAcceleration: 5
-  _brakeAngleThreshold: 170
+  _maxAcceleration: 2
+  _brakeAngleThreshold: 150
   _brakeAcceleration: 15
   _debug: 1
   _gizmosSize: 1.5
