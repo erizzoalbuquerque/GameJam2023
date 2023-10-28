@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dfa9c5737f9cd4701ac8a23f892ac147, type: 3}
-  m_Name: Pasta
+  m_Name: Soda
   m_EditorClassIdentifier: 
-  foodName: Pasta
-  price: 10
-  avgConsumeTime: 3
-  img: {fileID: 0}
+  foodName: Soda
+  price: 3
+  avgConsumeTime: 2
+  img: {fileID: 21300000, guid: 5cc729e26509b8a4ba097d2afa423d34, type: 3}
