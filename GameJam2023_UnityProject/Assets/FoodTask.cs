@@ -10,9 +10,7 @@ public class FoodTask : CustomerTask
 {
     [SerializeField] Food _food;
 
-    float _timeToFail = 20f;
-    float _timeToEat = 10f;
-    float _payment = 100f;
+    float _timeToFail = 10f;
     
     State _state;
     float _waitingStartTime;
@@ -26,14 +24,19 @@ public class FoodTask : CustomerTask
 
     public override void Start()
     {
+        _isDone = false;
+
         float _startTime = Time.time;
         _state = State.WaitingFood;
 
         Debug.Log("Starting task: " + _food.name);
     }
 
-    public override void Update()
+    public override void Execute()
     {
+        Debug.Log(_state);
+        Debug.Log(_isDone);
+
         if (_isDone == true)
         {
             return;
@@ -53,9 +56,11 @@ public class FoodTask : CustomerTask
                 break;
             
             case State.Eating:
-                if (Time.time - _eatingStartTime < _timeToEat)
+                if (Time.time - _eatingStartTime < _food.AvgConsumeTime)
                 {
                     //Do Something;
+                    Debug.Log(Time.time - _eatingStartTime);
+                    Debug.Log(_food.AvgConsumeTime);
                 }
                 else
                 {
@@ -68,13 +73,17 @@ public class FoodTask : CustomerTask
     void FailTask()
     {
         _isDone = true;
-        _success = false;        
+        _success = false;
+
+        Debug.Log("Failed task: " + _food.FoodName);
     }
 
     void CompleteTask()
     {
         _isDone = true;
         _success = true;
+
+        Debug.Log("Completed task: " + _food.FoodName);
     }
 
     void ReceiveFood()

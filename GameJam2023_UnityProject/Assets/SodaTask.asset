@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0339c97303dcbdd409027e0790f2a081, type: 3}
   m_Name: SodaTask
   m_EditorClassIdentifier: 
-  _food: {fileID: 0}
+  _food: {fileID: 11400000, guid: 7e2ce8f67fe7341a6993430d53cc39d4, type: 2}

@@ -13,7 +13,7 @@ public abstract class CustomerTask : ScriptableObject
     protected bool _success = false;
 
     public abstract void Start();
-    public abstract void Update();
+    public abstract void Execute();
     public abstract void Finish();
     public abstract void Interact();
 }

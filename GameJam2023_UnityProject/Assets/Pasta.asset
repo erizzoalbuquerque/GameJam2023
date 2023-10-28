@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Pasta
   m_EditorClassIdentifier: 
   foodName: Pasta
-  price: 0
-  avgConsumeTime: 0
+  price: 10
+  avgConsumeTime: 3
   img: {fileID: 0}

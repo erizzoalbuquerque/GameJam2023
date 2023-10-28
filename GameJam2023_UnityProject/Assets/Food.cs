@@ -10,7 +10,7 @@ public class Food : ScriptableObject
     [SerializeField] private int avgConsumeTime;
     [SerializeField] private Sprite img;
 
-    string FoodName { get => foodName; }
+    public string FoodName { get => foodName; }
     public int Price { get => price; }
     public int AvgConsumeTime { get => avgConsumeTime; }
     public Sprite Img { get => img; }

@@ -19,7 +19,7 @@ public class Customer : MonoBehaviour
         Dying,
     }
 
-    List<CustomerTask> _tasks;
+    List<CustomerTask> _tasks = new List<CustomerTask>();
     CustomerTask _currentTask;
     State _state;
     Table _table;
@@ -29,8 +29,6 @@ public class Customer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        _tasks = new List<CustomerTask>();
-
         Initialize(receiveTable);
     }
 
@@ -60,7 +58,7 @@ public class Customer : MonoBehaviour
         }
     }
 
-    public void Initialize(Table table)
+    void Initialize(Table table)
     {
         _state = State.WalkingToTable;
         _table = table; // TableManager.reserveTable();
@@ -83,12 +81,15 @@ public class Customer : MonoBehaviour
 
     void WalkToTable()
     {
-        //this.transform.position = _table.GetSeatPosition();
+        this.transform.position = _table.GetSeatPosition();
         _state = State.DoingTasks;
     }
 
     void DoTasks()
     {
+        Debug.Log("Do Tasks");
+        Debug.Log(_tasks.Count);
+
         //Check if there's any remaining task
         if (_tasks.Count == 0)
         {
@@ -104,33 +105,23 @@ public class Customer : MonoBehaviour
 
         if (_currentTask.IsDone == true)
         {
-            FinishCurrentTask();
+            _currentTask.Finish();
 
-            if (_currentTask.Success == true)
+            if (_currentTask.Success == false)
             {
-                //Success!
-            }
-            else
-            {
-                //Failed. Leave the restaurant.
                 _state = State.Leaving;
+                return;
+
+            } else
+            {
+                _tasks.Remove(_currentTask);
+                _currentTask = null;
             }
         }
         else
         {
-            _currentTask.Update();
+            _currentTask.Execute();
         }
-    }
-
-    public void Interact()
-    {
-        if (_currentTask == null)
-            return;
-
-        if (_currentTask.IsDone == true)
-            return;
-
-        _currentTask.Interact();
     }
 
     void StarNewTask()
@@ -139,11 +130,14 @@ public class Customer : MonoBehaviour
         _currentTask.Start();
     }
 
-    void FinishCurrentTask()
+    [ContextMenu("DeliverFood")]
+    public void DeliverFood()
     {
-        _currentTask.Finish();
+        if (_currentTask == null)
+        {
+            return;
+        }
 
-        _currentTask = null;
-        _tasks.Remove(_currentTask);        
+        _currentTask.Interact();
     }
 }

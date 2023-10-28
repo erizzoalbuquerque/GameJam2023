@@ -868,6 +868,8 @@ GameObject:
   - component: {fileID: 1205540340}
   - component: {fileID: 1205540339}
   - component: {fileID: 1205540338}
+  - component: {fileID: 1205540341}
+  - component: {fileID: 1205540342}
   m_Layer: 0
   m_Name: Customer
   m_TagString: Untagged
@@ -963,6 +965,35 @@ Transform:
   - {fileID: 2031213844}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1205540341
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1205540337}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58bb99ef9462c5a4287ea9089aae6cfc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  receiveTable: {fileID: 0}
+  _possibleTasks:
+  - {fileID: 11400000, guid: a4ea9daf9e5a34373b153e6236ed9b31, type: 2}
+  - {fileID: 11400000, guid: e52362e07c0794ddd9e08770c0ceb9ea, type: 2}
+  maxTasks: 3
+--- !u!114 &1205540342
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1205540337}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17309003ca4f442d6a56cfb4a711f5b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1219155662
 GameObject:
   m_ObjectHideFlags: 0

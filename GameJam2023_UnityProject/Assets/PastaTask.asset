@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0339c97303dcbdd409027e0790f2a081, type: 3}
   m_Name: PastaTask
   m_EditorClassIdentifier: 
-  _food: {fileID: 0}
+  _food: {fileID: 11400000, guid: 35284eb48900b4d10909f88f58cf16a1, type: 2}
