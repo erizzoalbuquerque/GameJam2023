@@ -10,8 +10,9 @@ public abstract class CustomerTask : MonoBehaviour
     
     protected bool _isDone = false;
     protected bool _success = false;
+    protected Customer _customer;
 
-    public abstract void Initialize();
+    public abstract void Initialize(Customer customer);
     public abstract void Execute();
     public abstract void Finish();
     public abstract void Interact();

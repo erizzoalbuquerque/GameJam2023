@@ -22,9 +22,12 @@ public class FoodTask : CustomerTask
         Eating
     }
 
-    public override void Initialize()
+    public override void Initialize(Customer customer)
     {
+        _customer = customer;
         _state = State.WaitingFood;
+
+        _customer.BalloonDialog.Say(_food.Img);
 
         Debug.Log("Initializing task: Waiting for " + _food.name);
     }
@@ -82,6 +85,9 @@ public class FoodTask : CustomerTask
     {
         _eatingStartTime = Time.time;
         _state = State.Eating;
+
+        _customer.BalloonDialog.ShutUp();
+
         Pay();
     }
 

@@ -12,6 +12,7 @@ public class Customer : MonoBehaviour
     [SerializeField] List<CustomerTask> _possibleTasks;
     [SerializeField] int maxTasks = 3;
     [SerializeField] float walkSpeed = 10f;
+    [SerializeField] BalloonDialog _balloonDialog;
 
     enum State
     {
@@ -27,6 +28,8 @@ public class Customer : MonoBehaviour
     Table _table;
 
     bool _initialized = false;
+
+    public BalloonDialog BalloonDialog { get => _balloonDialog;}
 
     // Start is called before the first frame update
     void Start()
@@ -107,7 +110,7 @@ public class Customer : MonoBehaviour
         if (_currentTask == null)
         {
             _currentTask = _tasks[0];
-            _currentTask.Initialize();
+            _currentTask.Initialize(this);
         }
 
         if (_currentTask.IsDone == true)
