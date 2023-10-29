@@ -27,7 +27,7 @@ public class FoodTask : CustomerTask
         _customer = customer;
         _state = State.WaitingFood;
 
-        _customer.BalloonDialog.Say(_food.Img);
+        _customer.BalloonDialog.Say(_food.Img, _timeToFail);
 
         Debug.Log("Initializing task: Waiting for " + _food.name);
     }
@@ -67,6 +67,8 @@ public class FoodTask : CustomerTask
 
     void FailTask()
     {
+        _customer.BalloonDialog.ShutUp();
+
         _isDone = true;
         _success = false;
 
