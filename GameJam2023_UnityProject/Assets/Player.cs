@@ -9,7 +9,7 @@ public class Player : MonoBehaviour
 
     List<Food> _foods = new List<Food>();
 
-    public event Action playerFoooInventoryUpdated;
+    public event Action playerFoodInventoryUpdated;
 
     public int MaxNumberOfFoods { get => _maxNumberOfFoods;}
 
@@ -27,10 +27,10 @@ public class Player : MonoBehaviour
 
     public void AddFood(Food food)
     {
-        if (_foods.Count < 3)
+        if (_foods.Count < _maxNumberOfFoods)
         {
             _foods.Add(food);
-            playerFoooInventoryUpdated.Invoke();
+            playerFoodInventoryUpdated.Invoke();
         }            
     }
 
@@ -39,7 +39,7 @@ public class Player : MonoBehaviour
         if (_foods.Contains(food))
         {
             _foods.Remove(food);
-            playerFoooInventoryUpdated.Invoke();
+            playerFoodInventoryUpdated.Invoke();
         }
     }
 

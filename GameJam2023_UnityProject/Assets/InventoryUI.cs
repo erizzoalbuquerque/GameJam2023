@@ -16,12 +16,12 @@ public class InventoryUI : MonoBehaviour
 
     void OnEnable()
     {
-        _player.playerFoooInventoryUpdated += OnPlayerFoodInventoryUpdated;
+        _player.playerFoodInventoryUpdated += OnPlayerFoodInventoryUpdated;
     }
 
     void OnDisable()
     {
-        _player.playerFoooInventoryUpdated -= OnPlayerFoodInventoryUpdated;
+        _player.playerFoodInventoryUpdated -= OnPlayerFoodInventoryUpdated;
     }
 
     void Update()
