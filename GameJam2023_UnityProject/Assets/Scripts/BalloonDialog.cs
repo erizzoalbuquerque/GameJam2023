@@ -35,7 +35,7 @@ public class BalloonDialog : MonoBehaviour
     {
         _balloon.SetActive(true);
         _balloon.transform.localScale = Vector3.zero;
-        _balloon.transform.DOScale(Vector3.one,0.5f);
+        _balloon.transform.DOScale(Vector3.one,0.5f).SetEase(Ease.OutElastic);
     }
 
     void RemoveBaloon()

@@ -7,34 +7,42 @@ using TMPro;
 
 public class GameManager : MonoBehaviour
 {
-    private static GameManager _instance;
+    static GameManager _instance;
 
     public GameObject scoreText;
     public int playerScore = 0;
 
-    TextMeshProUGUI scoreTextTMP;
+    Player _player;
+    TextMeshProUGUI _scoreTextTMP;
 
     public static GameManager Instance
     {
         get
         {
-            if (_instance is null)
+            if (_instance == null)
             {
-                Debug.LogError("GameManager not instanciated");
+                _instance = FindObjectOfType<GameManager>();
+
+                if(_instance == null) 
+                {
+                    Debug.LogError("Couldn't find a instance of type GameManager on the scene!");
+                }
             }
 
             return _instance;
         }
     }
 
+    public Player Player { get => _player;}
+
     void Awake()
     {
-        _instance = this;
+        _player = FindAnyObjectByType<Player>();
     }
 
     void Start()
     {
-        scoreTextTMP = scoreText.GetComponent<TextMeshProUGUI>();
+        _scoreTextTMP = scoreText.GetComponent<TextMeshProUGUI>();
         setScore(0);
     }
 
@@ -46,6 +54,6 @@ public class GameManager : MonoBehaviour
     void setScore(int score)
     {
         playerScore = score;
-        scoreTextTMP.text = playerScore.ToString();
+        _scoreTextTMP.text = playerScore.ToString();
     }
 }

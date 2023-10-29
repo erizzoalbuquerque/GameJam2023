@@ -83,12 +83,20 @@ public class FoodTask : CustomerTask
 
     void ReceiveFood()
     {
-        _eatingStartTime = Time.time;
-        _state = State.Eating;
+        Player player = GameManager.Instance.Player;
 
-        _customer.BalloonDialog.ShutUp();
+        if (player.HasFood(_food))
+        {
+            player.DeliverFood(_food);
 
-        Pay();
+            _eatingStartTime = Time.time;
+            _state = State.Eating;
+
+            _customer.BalloonDialog.ShutUp();
+
+            Pay();
+        }
+
     }
 
     void Pay()
