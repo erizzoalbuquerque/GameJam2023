@@ -26,6 +26,7 @@ public class FoodTask : CustomerTask
     {
         _customer = customer;
         _state = State.WaitingFood;
+        _waitingStartTime = Time.time;
 
         _customer.BalloonDialog.Say(_food.Img, _timeToFail);
 
@@ -44,7 +45,7 @@ public class FoodTask : CustomerTask
             case State.WaitingFood:
                 if (Time.time - _waitingStartTime < _timeToFail)
                 {
-                    //Do Something;
+                    //print("FoodTask Progress: " + ((Time.time - _waitingStartTime) / _timeToFail).ToString());
                 }
                 else
                 {

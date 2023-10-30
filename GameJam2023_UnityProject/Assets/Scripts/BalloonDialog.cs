@@ -8,12 +8,14 @@ public class BalloonDialog : MonoBehaviour
     [SerializeField] SpriteRenderer _iconSpriteRenderer;
     [SerializeField] GameObject _balloon;
     [SerializeField] SpriteRenderer _fillerSpriteRenderer;
+    [SerializeField] Color _fillerAlmostTimeOutColor;
 
     Material _fillerMaterial;
 
     float _timeOut;
     float _startTime;
     bool _isRunning;
+    Color _fillerNormalColor;
 
     // Start is called before the first frame update
     void Start()
@@ -21,7 +23,8 @@ public class BalloonDialog : MonoBehaviour
         ShutUp();
 
         _fillerMaterial = _fillerSpriteRenderer.material;
-        print(_fillerMaterial.name);
+
+        _fillerNormalColor = _fillerSpriteRenderer.material.color;
     }
 
     // Update is called once per frame
@@ -48,9 +51,18 @@ public class BalloonDialog : MonoBehaviour
         RemoveBalloon();
     }
 
-    void UpdateFiller(float progress)
+    public void UpdateFiller(float progress)
     {
         _fillerMaterial.SetFloat("_ClipUvRight", 1f - progress);
+        if (progress > 0.7)
+        {
+            _fillerMaterial.color = _fillerAlmostTimeOutColor;
+            _balloon.transform.localScale = Vector3.one * (1f + 0.2f * Mathf.Abs(Mathf.Sin( (progress-0.7f) * Mathf.PI * 10f)));
+        }
+        else
+        {
+            _fillerMaterial.color = _fillerNormalColor;
+        }
     }
 
     void CreateBalloon()

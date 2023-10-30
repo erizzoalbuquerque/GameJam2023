@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6949001105818550458}
   m_Layer: 0
-  m_Name: BaloonTimer
+  m_Name: BalloonTimer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -42,7 +42,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4700418826090316031}
   m_Layer: 0
-  m_Name: Baloon
+  m_Name: Balloon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -76,7 +76,7 @@ GameObject:
   - component: {fileID: 7754848611445280585}
   - component: {fileID: 34121289896385055}
   m_Layer: 0
-  m_Name: BaloonDialog
+  m_Name: BalloonDialog
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -113,6 +113,7 @@ MonoBehaviour:
   _iconSpriteRenderer: {fileID: 9137713549419377264}
   _balloon: {fileID: 9080344121343303312}
   _fillerSpriteRenderer: {fileID: 6381911024711323477}
+  _fillerAlmostTimeOutColor: {r: 0.9811321, g: 0.27305093, b: 0.27305093, a: 1}
 --- !u!1 &2972480597198976546
 GameObject:
   m_ObjectHideFlags: 0
@@ -405,7 +406,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1693586964887124242}
   m_Layer: 0
-  m_Name: BaloonPivot
+  m_Name: BalloonPivot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
