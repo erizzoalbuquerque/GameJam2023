@@ -99,7 +99,6 @@ public class FoodTask : CustomerTask
 
             Pay();
         }
-
     }
 
     void Pay()
@@ -117,6 +116,7 @@ public class FoodTask : CustomerTask
 
     public override void Interact()
     {
-        ReceiveFood();
+        if (_state == State.WaitingFood)
+            ReceiveFood();
     }
 }
