@@ -31,11 +31,16 @@ public class InventoryUI : MonoBehaviour
 
     void UpdateIcons()
     {
-        List<Food> playerFoods = _player.GetFoodListCopy();        
-        
-        for(int i = 0; i < playerFoods.Count; i++)
+        List<Food> playerFoods = _player.GetFoodListCopy();
+
+        for (int i = 0; i < playerFoods.Count; i++)
         {
             _uiFoodIcons[i].sprite = playerFoods[i].Img;
+        }
+
+        for (int i = playerFoods.Count; i < _uiFoodIcons.Count; i++)
+        {
+            _uiFoodIcons[i].sprite = null;
         }
     }
 
