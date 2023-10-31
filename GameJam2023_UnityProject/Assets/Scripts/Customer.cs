@@ -17,7 +17,7 @@ public class Customer : MonoBehaviour
     [SerializeField] CustomerMovement _customerMovement;
 
 
-    enum State
+    public enum State
     {
         WalkingToTable,
         DoingTasks,
@@ -33,6 +33,8 @@ public class Customer : MonoBehaviour
     bool _initialized = false;
 
     public BalloonDialog BalloonDialog { get => _balloonDialog;}
+    public State CurrentSate { get => _state; }
+
 
     // Start is called before the first frame update
     void Start()
@@ -148,7 +150,7 @@ public class Customer : MonoBehaviour
     void WalkOut()
     {
         //Vector2 doorPosition = RoomManager.GetDoorPosition()
-        Vector3 doorPosition = 30f * Vector2.right;
+        Vector3 doorPosition = 30f * Vector2.right;// Temp
 
         Vector2 goalDirection = _pathPlanner.GetDirectionToGoal(doorPosition, this.transform.position);
         _customerMovement.SetDirection(goalDirection);
@@ -168,5 +170,33 @@ public class Customer : MonoBehaviour
         }
 
         _currentTask.Interact();
+    }
+
+    public bool IsEating()
+    {
+        if ( _currentTask == null)
+            return false;
+
+        if (_currentTask is FoodTask)
+        {
+            FoodTask foodTask = (FoodTask)_currentTask;
+
+            if (foodTask.CurrentState == FoodTask.State.Eating)
+                return true;
+            else
+                return false;
+        }
+        else
+        { 
+            return false;
+        }
+    }
+
+    public Vector3 GetTablePosition()
+    {
+        if (_table != null)
+            return _table.transform.position;
+        else
+            return Vector3.zero;
     }
 }

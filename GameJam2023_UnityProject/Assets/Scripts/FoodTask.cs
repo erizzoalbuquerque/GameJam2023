@@ -1,8 +1,6 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Net.NetworkInformation;
-using Unity.VisualScripting.Antlr3.Runtime;
 using UnityEngine;
 
 public class FoodTask : CustomerTask
@@ -16,7 +14,9 @@ public class FoodTask : CustomerTask
 
     State _state;
 
-    enum State
+    public State CurrentState { get => _state; }
+
+    public enum State
     {
         WaitingFood,
         Eating
