@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class CustomerVisual : MonoBehaviour
@@ -44,7 +45,8 @@ public class CustomerVisual : MonoBehaviour
         }
         else if (_customer.CurrentSate == Customer.State.Dying)
         {
-            //Play Death animation;
+            //Play Death animation
+            this.transform.Rotate(Vector3.forward, Time.deltaTime * 360f);
         }
     }
 

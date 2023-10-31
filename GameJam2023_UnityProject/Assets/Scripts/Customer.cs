@@ -15,6 +15,7 @@ public class Customer : MonoBehaviour
     [SerializeField] BalloonDialog _balloonDialog;
     [SerializeField] PathPlanner _pathPlanner;
     [SerializeField] CustomerMovement _customerMovement;
+    [SerializeField] float _dyingStateDuration = 3f;
 
 
     public enum State
@@ -29,6 +30,7 @@ public class Customer : MonoBehaviour
     CustomerTask _currentTask;
     State _state;
     Table _table;
+    float _dyingStartTime;
 
     bool _initialized = false;
 
@@ -65,6 +67,7 @@ public class Customer : MonoBehaviour
                 break;
 
             case State.Dying:
+                Dying();
                 break;
         }
     }
@@ -198,5 +201,31 @@ public class Customer : MonoBehaviour
             return _table.transform.position;
         else
             return Vector3.zero;
+    }
+
+    void Die()
+    {
+        if (_currentTask != null)
+        {
+            Destroy(_currentTask);
+            _currentTask = null;
+        }
+
+        _balloonDialog.ShutUp();
+
+        _dyingStartTime = Time.time;
+        _state = State.Dying;
+    }
+
+    void Dying()
+    {
+        if (Time.time - _dyingStartTime > _dyingStateDuration)
+            Destroy(this.gameObject);
+    }
+
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "Player")
+            Die();
     }
 }
