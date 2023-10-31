@@ -33,5 +33,6 @@ public class CustomerMovement : MonoBehaviour
     void Move()
     {
         _rb.velocity = _currentDirection * _maxSpeed;
+        _currentVelocity = _rb.velocity;
     }
 }
