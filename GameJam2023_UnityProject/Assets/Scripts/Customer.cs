@@ -41,7 +41,7 @@ public class Customer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Initialize(receiveTable);
+        //Initialize(receiveTable);
     }
 
     // Update is called once per frame
@@ -72,7 +72,7 @@ public class Customer : MonoBehaviour
         }
     }
 
-    void Initialize(Table table)
+    public void Initialize(Table table)
     {
         _state = State.WalkingToTable;
         _table = table;
@@ -158,8 +158,9 @@ public class Customer : MonoBehaviour
         Vector2 goalDirection = _pathPlanner.GetDirectionToGoal(doorPosition, this.transform.position);
         _customerMovement.SetDirection(goalDirection);
 
-        if ((this.transform.position - doorPosition).magnitude < 0.1f)
+        if ((this.transform.position - doorPosition).magnitude < 0.5f)
         {
+            _table.FreeTable();
             Destroy(gameObject);
         }
     }
@@ -211,6 +212,8 @@ public class Customer : MonoBehaviour
             _currentTask = null;
         }
 
+        GameManager.Instance.die();
+
         _balloonDialog.ShutUp();
 
         _dyingStartTime = Time.time;
@@ -220,7 +223,10 @@ public class Customer : MonoBehaviour
     void Dying()
     {
         if (Time.time - _dyingStartTime > _dyingStateDuration)
+        {
+            _table.FreeTable();
             Destroy(this.gameObject);
+        }
     }
 
     void OnTriggerEnter2D(Collider2D collision)

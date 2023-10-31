@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
 
     public GameObject scoreText;
     public int playerScore = 0;
+    public int deathPenalty = 10;
 
     Player _player;
     TextMeshProUGUI _scoreTextTMP;
@@ -51,9 +52,15 @@ public class GameManager : MonoBehaviour
         setScore(playerScore + scoreToAdd);
     }
 
+    public void die()
+    {
+        addScore(-deathPenalty);
+    }
+
     void setScore(int score)
     {
         playerScore = score;
         _scoreTextTMP.text = playerScore.ToString();
     }
+
 }
