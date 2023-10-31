@@ -27,7 +27,7 @@ public class RoomManager : MonoBehaviour
     }
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         _tables = new List<Table> (FindObjectsOfType<Table>());
     }
