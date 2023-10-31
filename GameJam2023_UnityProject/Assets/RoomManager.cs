@@ -5,6 +5,7 @@ using UnityEngine;
 public class RoomManager : MonoBehaviour
 {
     List<Table> _tables;
+    List<Door> _doors;
 
     static RoomManager _instance;
 
@@ -30,6 +31,7 @@ public class RoomManager : MonoBehaviour
     void Awake()
     {
         _tables = new List<Table> (FindObjectsOfType<Table>());
+        _doors= new List<Door>(FindObjectsOfType<Door>());
     }
 
     public Table GetFreeTable()
@@ -45,5 +47,10 @@ public class RoomManager : MonoBehaviour
         }
 
         return null;
+    }
+
+    public Door GetDoor()
+    {
+        return _doors[Random.Range(0, _doors.Count)];
     }
 }

@@ -7,14 +7,12 @@ using Random = UnityEngine.Random;
 
 public class Customer : MonoBehaviour
 {
-    [SerializeField] Table receiveTable; // Delete later
     [SerializeField] List<CustomerTask> _possibleTasks;
     [SerializeField] int maxTasks = 3;
     [SerializeField] BalloonDialog _balloonDialog;
     [SerializeField] PathPlanner _pathPlanner;
     [SerializeField] CustomerMovement _customerMovement;
     [SerializeField] float _dyingStateDuration = 3f;
-
 
     public enum State
     {
@@ -28,6 +26,8 @@ public class Customer : MonoBehaviour
     CustomerTask _currentTask;
     State _state;
     Table _table;
+    Door _door;
+
     float _dyingStartTime;
 
     bool _initialized = false;
@@ -35,11 +35,11 @@ public class Customer : MonoBehaviour
     public BalloonDialog BalloonDialog { get => _balloonDialog;}
     public State CurrentSate { get => _state; }
 
-
     // Start is called before the first frame update
     void Start()
     {
-        //Initialize(receiveTable);
+        _door = RoomManager.Instance.GetDoor();
+        transform.position = _door.transform.position;
     }
 
     // Update is called once per frame
@@ -150,8 +150,7 @@ public class Customer : MonoBehaviour
 
     void WalkOut()
     {
-        //Vector2 doorPosition = RoomManager.GetDoorPosition()
-        Vector3 doorPosition = 30f * Vector2.right;// Temp
+        Vector3 doorPosition = _door.transform.position;
 
         Vector2 goalDirection = _pathPlanner.GetDirectionToGoal(doorPosition, this.transform.position);
         _customerMovement.SetDirection(goalDirection);
