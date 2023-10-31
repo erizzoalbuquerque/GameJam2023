@@ -8,31 +8,30 @@ public class CustomerMovement : MonoBehaviour
 {
     [SerializeField] float _maxSpeed;
 
-    Vector2 _targetPosition;
+    Rigidbody2D _rb;
+    Vector2 _currentVelocity;
+    Vector2 _currentDirection;
+
+    public Vector2 CurrentVelocity { get => _currentVelocity; }
 
 
-    // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-        
+        _rb = GetComponent<Rigidbody2D>();
     }
 
-    // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         Move();
     }
 
-    public void SetTarget(Vector2 targetPosition)
+    public void SetDirection(Vector2 direction)
     {
-        _targetPosition = targetPosition;
+        _currentDirection = direction.normalized;
     }
 
     void Move()
     {
-        if (transform.position != (Vector3)_targetPosition)
-        {
-            Vector2.MoveTowards(this.transform.position, _targetPosition,_maxSpeed * Time.deltaTime);
-        }
+        _rb.velocity = _currentDirection * _maxSpeed;
     }
 }

@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
+using UnityEditor.Overlays;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -11,8 +12,10 @@ public class Customer : MonoBehaviour
     [SerializeField] Table receiveTable; // Delete later
     [SerializeField] List<CustomerTask> _possibleTasks;
     [SerializeField] int maxTasks = 3;
-    [SerializeField] float walkSpeed = 10f;
     [SerializeField] BalloonDialog _balloonDialog;
+    [SerializeField] PathPlanner _pathPlanner;
+    [SerializeField] CustomerMovement _customerMovement;
+
 
     enum State
     {
@@ -87,16 +90,17 @@ public class Customer : MonoBehaviour
 
     void WalkToTable()
     {
-        Vector3 seatDirection = _table.GetSeatPosition() - this.transform.position;
+        Vector2 seatPosition = _table.GetSeatPosition();
 
-        this.transform.Translate(seatDirection.normalized * walkSpeed * Time.deltaTime);
-
-        Vector3 updatedSeatDirection = _table.GetSeatPosition() - this.transform.position;
-
-        if (updatedSeatDirection.magnitude < 0.1f)
+        if (((Vector2)this.transform.position - seatPosition).magnitude < 0.1f)
         {
+            _customerMovement.SetDirection(Vector2.zero);
             _state = State.DoingTasks;
+            return;
         }
+        
+        Vector2 goalDirection = _pathPlanner.GetDirectionToGoal(seatPosition, this.transform.position);
+        _customerMovement.SetDirection(goalDirection);
     }
 
     void DoTasks()
@@ -143,9 +147,13 @@ public class Customer : MonoBehaviour
 
     void WalkOut()
     {
-        this.transform.Translate(Vector3.right * walkSpeed * Time.deltaTime);
+        //Vector2 doorPosition = RoomManager.GetDoorPosition()
+        Vector3 doorPosition = 30f * Vector2.right;
 
-        if (this.transform.position.x > 30f)
+        Vector2 goalDirection = _pathPlanner.GetDirectionToGoal(doorPosition, this.transform.position);
+        _customerMovement.SetDirection(goalDirection);
+
+        if ((this.transform.position - doorPosition).magnitude < 0.1f)
         {
             Destroy(gameObject);
         }
