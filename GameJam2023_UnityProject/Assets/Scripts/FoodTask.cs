@@ -7,7 +7,7 @@ public class FoodTask : CustomerTask
 {
     [SerializeField] Food _food;
 
-    float _timeToFail = 10f;
+    [SerializeField] float _timeToFail = 10f;
 
     float _waitingStartTime;
     float _eatingStartTime;
@@ -95,6 +95,7 @@ public class FoodTask : CustomerTask
             _state = State.Eating;
 
             _customer.BalloonDialog.ShutUp();
+            _customer.PlayReceiveFoodSound();
 
             Pay();
         }
