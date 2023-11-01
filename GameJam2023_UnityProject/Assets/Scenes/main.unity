@@ -550,7 +550,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scoreText: {fileID: 1281971312}
   playerScore: 0
-  deathPenalty: 10
+  deathPenalty: 50
 --- !u!4 &222502045
 Transform:
   m_ObjectHideFlags: 0
