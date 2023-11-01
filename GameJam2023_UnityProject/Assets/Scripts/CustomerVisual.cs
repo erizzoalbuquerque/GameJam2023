@@ -7,6 +7,7 @@ public class CustomerVisual : MonoBehaviour
 {
     [SerializeField] Customer _customer;
     [SerializeField] CustomerMovement _customerMovement;
+    [SerializeField] Animator _animator;
 
     Vector3 _startScale;
     Vector3 _lastVelocity;
@@ -22,6 +23,8 @@ public class CustomerVisual : MonoBehaviour
     {
         if (_customer.CurrentSate == Customer.State.WalkingToTable || _customer.CurrentSate == Customer.State.Leaving) 
         {
+
+            _animator.SetBool("isSitting", false);
             if (_customerMovement.CurrentVelocity.x > 0f)
                 FaceDirection(true);
             else if (_customerMovement.CurrentVelocity.x < 0f)
@@ -35,13 +38,17 @@ public class CustomerVisual : MonoBehaviour
         {
             Vector2 tableDirection = _customer.GetTablePosition() - _customer.transform.position;
 
+            _animator.SetBool("isSitting", true);
+
             if (tableDirection.x >= 0f)
                 FaceDirection(true);
             else
                 FaceDirection(false);
 
-            //if (_customer.IsEating())
-            //    //Play eating animation;
+            if (_customer.IsEating())
+                _animator.SetBool("isEating", true);
+            else
+                _animator.SetBool("isEating", false);
         }
         else if (_customer.CurrentSate == Customer.State.Dying)
         {

@@ -2696,7 +2696,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _minWaitTime: 3
   _maxWaitTime: 6
-  _customerPrefab: {fileID: 3034254016507077666, guid: 05046da5d33f0fa4e9b6e467604fbf93, type: 3}
+  _customerPrefab: {fileID: 3034254016507077666, guid: f860df9c24bd5f64b8c8f17e337c3f18, type: 3}
 --- !u!4 &1713694487
 Transform:
   m_ObjectHideFlags: 0
