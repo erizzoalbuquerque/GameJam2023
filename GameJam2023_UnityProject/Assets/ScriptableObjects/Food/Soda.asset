@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Soda
   m_EditorClassIdentifier: 
   foodName: Soda
-  price: 3
+  price: 20
   avgConsumeTime: 2
-  img: {fileID: 21300000, guid: 5cc729e26509b8a4ba097d2afa423d34, type: 3}
+  img: {fileID: -849242607, guid: d3c44f8523decac4f9ee165b5c02e309, type: 3}

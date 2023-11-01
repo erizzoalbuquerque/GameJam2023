@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Pasta
   m_EditorClassIdentifier: 
   foodName: Pasta
-  price: 10
+  price: 30
   avgConsumeTime: 3
-  img: {fileID: 21300000, guid: 69059793f4258d84b9dc5de294f1a3de, type: 3}
+  img: {fileID: -2026418261, guid: d3c44f8523decac4f9ee165b5c02e309, type: 3}
