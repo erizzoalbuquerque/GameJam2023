@@ -15,4 +15,11 @@ public class AudioTools : MonoBehaviour
         audioSource.pitch = pitch;
         audioSource.PlayOneShot(audioCue.AudioClip, volume);
     }
+
+    public static void PlayRandAudioCue(List<AudioCue> audioCueList, AudioSource audioSource)
+    {
+        AudioCue audioCue = audioCueList[Random.Range(0, audioCueList.Count)];
+
+        PlayAudioCue(audioCue, audioSource);
+    }
 }
