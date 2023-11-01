@@ -103,10 +103,7 @@ public class FoodTask : CustomerTask
 
     void Pay()
     {
-        // Increase Player Score (Global)
-        // Display UI money (delay)
-        GameManager.Instance.addScore(this._food.Price);
-        Debug.Log("Received Money " + this._food.Price.ToString());
+        _customer.Pay(_food.Price);
     }
 
     public override void Finish()

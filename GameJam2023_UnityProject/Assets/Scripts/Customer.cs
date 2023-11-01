@@ -13,6 +13,7 @@ public class Customer : MonoBehaviour
     [SerializeField] PathPlanner _pathPlanner;
     [SerializeField] CustomerMovement _customerMovement;
     [SerializeField] float _dyingStateDuration = 3f;
+    [SerializeField] CustomerPayText _payText;
 
     public enum State
     {
@@ -209,6 +210,7 @@ public class Customer : MonoBehaviour
             _currentTask = null;
         }
 
+        _payText.Play( - GameManager.Instance.deathPenalty);
         GameManager.Instance.die();
 
         _balloonDialog.ShutUp();
@@ -224,6 +226,12 @@ public class Customer : MonoBehaviour
             _table.FreeTable();
             Destroy(this.gameObject);
         }
+    }
+
+    public void Pay(int amount)
+    {
+        _payText.Play(amount);
+        GameManager.Instance.addScore(amount);
     }
 
     void OnTriggerEnter2D(Collider2D collision)
