@@ -29,8 +29,7 @@ public class FoodTask : CustomerTask
         _waitingStartTime = Time.time;
 
         _customer.BalloonDialog.Say(_food.Img, _timeToFail);
-
-        Debug.Log("Initializing task: Waiting for " + _food.name);
+        //Debug.Log("Initializing task: Waiting for " + _food.name);
     }
 
     public override void Execute()
@@ -56,7 +55,7 @@ public class FoodTask : CustomerTask
             case State.Eating:
                 if (Time.time - _eatingStartTime < _food.AvgConsumeTime)
                 {
-                    Debug.Log("Eating " + _food.FoodName);
+                    //Debug.Log("Eating " + _food.FoodName);
                 }
                 else
                 {
@@ -73,7 +72,7 @@ public class FoodTask : CustomerTask
         _isDone = true;
         _success = false;
 
-        Debug.Log("Failed task: " + _food.FoodName);
+        //Debug.Log("Failed task: " + _food.FoodName);
     }
 
     void CompleteTask()
@@ -81,7 +80,7 @@ public class FoodTask : CustomerTask
         _isDone = true;
         _success = true;
 
-        Debug.Log("Completed task: " + _food.FoodName);
+        //Debug.Log("Completed task: " + _food.FoodName);
     }
 
     void ReceiveFood()

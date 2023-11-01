@@ -145,8 +145,7 @@ public class Customer : MonoBehaviour
     void Leave()
     {
         _state = State.Leaving;
-
-        Debug.Log("Leaving");
+        //Debug.Log("Leaving");
     }
 
     void WalkOut()
