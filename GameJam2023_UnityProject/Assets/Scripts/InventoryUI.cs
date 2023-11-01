@@ -35,11 +35,13 @@ public class InventoryUI : MonoBehaviour
 
         for (int i = 0; i < playerFoods.Count; i++)
         {
+            _uiFoodIcons[i].enabled = true;
             _uiFoodIcons[i].sprite = playerFoods[i].Img;
         }
 
         for (int i = playerFoods.Count; i < _uiFoodIcons.Count; i++)
         {
+            _uiFoodIcons[i].enabled = false;
             _uiFoodIcons[i].sprite = null;
         }
     }
