@@ -7,13 +7,26 @@ using UnityEngine;
 public class Table : MonoBehaviour
 {
     [SerializeField] Transform seat;
+    [SerializeField] bool randomSeatPostion = false;
 
     Customer _customer;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        if (randomSeatPostion) 
+        {
+            int rand = Random.Range(0, 2);//a number 0 or 1
+
+            if (rand == 0) 
+            { 
+                //Do Nothing;
+            }
+            else
+            {
+                this.transform.Rotate(Vector3.forward, 180f);
+            }
+        }        
     }
 
     // Update is called once per frame
