@@ -1,0 +1,787 @@
+fileFormatVersion: 2
+guid: 9f87d74ebda3c0c4394900e7814c9381
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: CostumerDeath2_SpriteSheet38x332_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 38
+        height: 332
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0363}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2bb37d1dc32ddc4409c661830509f4a7
+      internalID: -713247994
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CostumerDeath2_SpriteSheet38x332_1
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 0
+        width: 38
+        height: 332
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0363}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a40cdf849a98b048811c2b849bcae86
+      internalID: 407056925
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CostumerDeath2_SpriteSheet38x332_2
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 0
+        width: 38
+        height: 332
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0363}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d34e192d3b827aa49965874d54d0dcde
+      internalID: -1754861638
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CostumerDeath2_SpriteSheet38x332_3
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 0
+        width: 38
+        height: 332
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0363}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 87fa30c15aa136148948f06d23a9afef
+      internalID: 240838207
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CostumerDeath2_SpriteSheet38x332_4
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 0
+        width: 38
+        height: 332
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0363}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c15d95b1fbbc100468b399ce83949e13
+      internalID: -1213469115
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CostumerDeath2_SpriteSheet38x332_5
+      rect:
+        serializedVersion: 2
+        x: 190
+        y: 0
+        width: 38
+        height: 332
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0363}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae23589d2270c2941ab1edb83db3dc0f
+      internalID: 1701859006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CostumerDeath2_SpriteSheet38x332_6
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 0
+        width: 38
+        height: 332
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0363}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bba2670ac863b1a47bd164aaca164edd
+      internalID: 2109530316
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CostumerDeath2_SpriteSheet38x332_7
+      rect:
+        serializedVersion: 2
+        x: 266
+        y: 0
+        width: 38
+        height: 332
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0363}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54832a50ee5ba584c82391d4697d08bd
+      internalID: -672008843
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CostumerDeath2_SpriteSheet38x332_8
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 0
+        width: 38
+        height: 332
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0363}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4f1ef88a91c1fa4e94ddbcb65d3b2f4
+      internalID: -175120299
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CostumerDeath2_SpriteSheet38x332_9
+      rect:
+        serializedVersion: 2
+        x: 342
+        y: 0
+        width: 38
+        height: 332
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0363}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5d50ee9d29bf2c41ab646d6509bd1c2
+      internalID: 1130279609
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CostumerDeath2_SpriteSheet38x332_10
+      rect:
+        serializedVersion: 2
+        x: 380
+        y: 0
+        width: 38
+        height: 332
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0363}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 402a25132990fd14db03785bb21f04fb
+      internalID: -493788132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CostumerDeath2_SpriteSheet38x332_11
+      rect:
+        serializedVersion: 2
+        x: 418
+        y: 0
+        width: 38
+        height: 332
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0363}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 836f5e41bf1e61145add872b908d7348
+      internalID: -45348749
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CostumerDeath2_SpriteSheet38x332_12
+      rect:
+        serializedVersion: 2
+        x: 456
+        y: 0
+        width: 38
+        height: 332
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0363}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e4aded95446eb14881a0bcceeb28651
+      internalID: 1812332270
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CostumerDeath2_SpriteSheet38x332_13
+      rect:
+        serializedVersion: 2
+        x: 494
+        y: 0
+        width: 38
+        height: 332
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0363}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f3f1002380ff284faebb76a0f0363eb
+      internalID: -1659691404
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CostumerDeath2_SpriteSheet38x332_14
+      rect:
+        serializedVersion: 2
+        x: 532
+        y: 0
+        width: 38
+        height: 332
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0363}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b604a5ac7ade9646a0c6ea15bd46255
+      internalID: -2078244174
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CostumerDeath2_SpriteSheet38x332_15
+      rect:
+        serializedVersion: 2
+        x: 570
+        y: 0
+        width: 38
+        height: 332
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0363}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8260c90934523864f854fbe7eea969f1
+      internalID: -1280696530
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CostumerDeath2_SpriteSheet38x332_16
+      rect:
+        serializedVersion: 2
+        x: 608
+        y: 0
+        width: 38
+        height: 332
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0363}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00fee00b3ef818f4f918258804609d26
+      internalID: -1739791624
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CostumerDeath2_SpriteSheet38x332_17
+      rect:
+        serializedVersion: 2
+        x: 646
+        y: 0
+        width: 38
+        height: 332
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0363}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 89729e6d346106743a8d621c7f251285
+      internalID: -1050531813
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CostumerDeath2_SpriteSheet38x332_18
+      rect:
+        serializedVersion: 2
+        x: 684
+        y: 0
+        width: 38
+        height: 332
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0363}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6028fbaf9789c0b4a9994afcde033698
+      internalID: -969368080
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CostumerDeath2_SpriteSheet38x332_19
+      rect:
+        serializedVersion: 2
+        x: 722
+        y: 0
+        width: 38
+        height: 332
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0363}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b8ca23b9fe7adc04485b82c610105f62
+      internalID: 272450837
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CostumerDeath2_SpriteSheet38x332_20
+      rect:
+        serializedVersion: 2
+        x: 760
+        y: 0
+        width: 38
+        height: 332
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0363}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd4293449c4e9484dbf0880504992a78
+      internalID: -1038287289
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CostumerDeath2_SpriteSheet38x332_21
+      rect:
+        serializedVersion: 2
+        x: 798
+        y: 0
+        width: 38
+        height: 332
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0363}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f17392060eee864d90aaedaa4d58a39
+      internalID: 886545620
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CostumerDeath2_SpriteSheet38x332_22
+      rect:
+        serializedVersion: 2
+        x: 836
+        y: 0
+        width: 38
+        height: 332
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0363}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3e5dad1a93e6464f8d6e405804df8ef
+      internalID: 188955226
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CostumerDeath2_SpriteSheet38x332_23
+      rect:
+        serializedVersion: 2
+        x: 874
+        y: 0
+        width: 38
+        height: 332
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0363}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3e213bd60110264b8a850db891a24ce
+      internalID: 1026340155
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CostumerDeath2_SpriteSheet38x332_24
+      rect:
+        serializedVersion: 2
+        x: 912
+        y: 0
+        width: 38
+        height: 332
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0363}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5607f6d3009a3443a19d5dc32548c57
+      internalID: 1532174051
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CostumerDeath2_SpriteSheet38x332_25
+      rect:
+        serializedVersion: 2
+        x: 950
+        y: 0
+        width: 38
+        height: 332
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0363}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1793c8d7c43e3cc4989e6ed4b977c316
+      internalID: 144488895
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CostumerDeath2_SpriteSheet38x332_26
+      rect:
+        serializedVersion: 2
+        x: 988
+        y: 0
+        width: 38
+        height: 332
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0363}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 90ef849de462aa74495440076f758a5d
+      internalID: 1099147033
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CostumerDeath2_SpriteSheet38x332_27
+      rect:
+        serializedVersion: 2
+        x: 1026
+        y: 0
+        width: 38
+        height: 332
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0363}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 45fa5f9e928a069428620184fbe8c894
+      internalID: -1300892368
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CostumerDeath2_SpriteSheet38x332_28
+      rect:
+        serializedVersion: 2
+        x: 1064
+        y: 0
+        width: 38
+        height: 332
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0363}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5af6927c9a12d23439a00a43b5514c59
+      internalID: 1993855524
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CostumerDeath2_SpriteSheet38x332_29
+      rect:
+        serializedVersion: 2
+        x: 1102
+        y: 0
+        width: 38
+        height: 332
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0363}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01f5c4703c3ee1749bb992f9778c071d
+      internalID: 657165569
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      CostumerDeath2_SpriteSheet38x332_0: -713247994
+      CostumerDeath2_SpriteSheet38x332_1: 407056925
+      CostumerDeath2_SpriteSheet38x332_10: -493788132
+      CostumerDeath2_SpriteSheet38x332_11: -45348749
+      CostumerDeath2_SpriteSheet38x332_12: 1812332270
+      CostumerDeath2_SpriteSheet38x332_13: -1659691404
+      CostumerDeath2_SpriteSheet38x332_14: -2078244174
+      CostumerDeath2_SpriteSheet38x332_15: -1280696530
+      CostumerDeath2_SpriteSheet38x332_16: -1739791624
+      CostumerDeath2_SpriteSheet38x332_17: -1050531813
+      CostumerDeath2_SpriteSheet38x332_18: -969368080
+      CostumerDeath2_SpriteSheet38x332_19: 272450837
+      CostumerDeath2_SpriteSheet38x332_2: -1754861638
+      CostumerDeath2_SpriteSheet38x332_20: -1038287289
+      CostumerDeath2_SpriteSheet38x332_21: 886545620
+      CostumerDeath2_SpriteSheet38x332_22: 188955226
+      CostumerDeath2_SpriteSheet38x332_23: 1026340155
+      CostumerDeath2_SpriteSheet38x332_24: 1532174051
+      CostumerDeath2_SpriteSheet38x332_25: 144488895
+      CostumerDeath2_SpriteSheet38x332_26: 1099147033
+      CostumerDeath2_SpriteSheet38x332_27: -1300892368
+      CostumerDeath2_SpriteSheet38x332_28: 1993855524
+      CostumerDeath2_SpriteSheet38x332_29: 657165569
+      CostumerDeath2_SpriteSheet38x332_3: 240838207
+      CostumerDeath2_SpriteSheet38x332_4: -1213469115
+      CostumerDeath2_SpriteSheet38x332_5: 1701859006
+      CostumerDeath2_SpriteSheet38x332_6: 2109530316
+      CostumerDeath2_SpriteSheet38x332_7: -672008843
+      CostumerDeath2_SpriteSheet38x332_8: -175120299
+      CostumerDeath2_SpriteSheet38x332_9: 1130279609
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

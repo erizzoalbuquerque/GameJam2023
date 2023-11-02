@@ -52,8 +52,9 @@ public class CustomerVisual : MonoBehaviour
         }
         else if (_customer.CurrentSate == Customer.State.Dying)
         {
-            //Play Death animation
-            this.transform.Rotate(Vector3.forward, Time.deltaTime * 360f);
+            _animator.SetTrigger("Death");
+            _animator.SetBool("dead", true);
+            _animator.SetInteger("DeadCount", Random.Range(1, 4));
         }
     }
 
