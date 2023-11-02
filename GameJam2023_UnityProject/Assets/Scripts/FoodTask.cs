@@ -95,7 +95,7 @@ public class FoodTask : CustomerTask
             _state = State.Eating;
 
             _customer.BalloonDialog.ShutUp();
-            _customer.PlayReceiveFoodSound();
+            //_customer.PlayReceiveFoodSound();
 
             Pay();
         }
