@@ -15,8 +15,8 @@ public class Customer : MonoBehaviour
     [SerializeField] float _dyingStateDuration = 3f;
     [SerializeField] CustomerPayText _payText;
 
-    //// Audio
-    //[SerializeField] public AudioSource _audioSource;
+    // Audio
+    [SerializeField] public AudioSource _audioSource;
     //[SerializeField] public AudioCue _receiveFoodAudioCue;
     //[SerializeField] public AudioCue _failCustomerAudioCue;
 
@@ -33,19 +33,20 @@ public class Customer : MonoBehaviour
     State _state;
     Table _table;
     Door _door;
-
     float _dyingStartTime;
-
     bool _initialized = false;
+    bool _isAngry = false;
 
     public BalloonDialog BalloonDialog { get => _balloonDialog;}
     public State CurrentSate { get => _state; }
+    public bool IsAngry { get => _isAngry;}
 
     // Start is called before the first frame update
     void Start()
     {
         _door = RoomManager.Instance.GetDoor();
         transform.position = _door.transform.position;
+        _isAngry = false;
     }
 
     // Update is called once per frame
@@ -157,6 +158,8 @@ public class Customer : MonoBehaviour
 
     void WalkOut()
     {
+        _isAngry = true;
+
         Vector3 doorPosition = _door.transform.position;
 
         Vector2 goalDirection = _pathPlanner.GetDirectionToGoal(doorPosition, this.transform.position);

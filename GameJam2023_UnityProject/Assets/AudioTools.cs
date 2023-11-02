@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AudioTools : MonoBehaviour
+public class AudioTools
 {
     public static void PlayAudioCue(AudioCue audioCue, AudioSource audioSource)
     {
