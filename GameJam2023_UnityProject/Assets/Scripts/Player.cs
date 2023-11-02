@@ -10,6 +10,7 @@ public class Player : MonoBehaviour
     List<Food> _foods = new List<Food>();
 
     public event Action playerFoodInventoryUpdated;
+    public event Action playerFoodInventoryUpdateFailed;
 
     public int MaxNumberOfFoods { get => _maxNumberOfFoods;}
 
@@ -31,7 +32,11 @@ public class Player : MonoBehaviour
         {
             _foods.Add(food);
             playerFoodInventoryUpdated.Invoke();
-        }            
+        }  
+        else
+        {
+            playerFoodInventoryUpdateFailed();
+        }
     }
 
     public void DeliverFood(Food food)
