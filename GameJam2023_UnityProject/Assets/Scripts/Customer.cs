@@ -250,7 +250,7 @@ public class Customer : MonoBehaviour
 
     public void PlayFailSound()
     {
-        AudioTools.PlayAudioCue(_failCustomerAudioCue, _audioSource);
+        //AudioTools.PlayAudioCue(_failCustomerAudioCue, _audioSource);
     }
 
     public void PlayReceiveFoodSound()
