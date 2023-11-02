@@ -98,6 +98,7 @@ public class Customer : MonoBehaviour
 
         if (((Vector2)this.transform.position - seatPosition).magnitude < 0.1f)
         {
+            this.transform.position = seatPosition;
             _customerMovement.SetDirection(Vector2.zero);
             _state = State.DoingTasks;
             return;

@@ -24,7 +24,7 @@ public class Table : MonoBehaviour
             }
             else
             {
-                this.transform.Rotate(Vector3.forward, 180f);
+                this.transform.localScale = new Vector3(-1f,1f,1f);
             }
         }        
     }
