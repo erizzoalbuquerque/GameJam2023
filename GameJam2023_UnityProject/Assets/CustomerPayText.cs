@@ -55,7 +55,7 @@ public class CustomerPayText : MonoBehaviour
 
         sb.Append(amountPaid);
 
-        print(sb.ToString());
+        //print(sb.ToString());
         _textMeshPro.text = sb.ToString();
 
         this.transform.localPosition = _startLocalPosition;

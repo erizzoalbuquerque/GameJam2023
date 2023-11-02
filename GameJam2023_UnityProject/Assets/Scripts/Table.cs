@@ -62,7 +62,6 @@ public class Table : MonoBehaviour
     {
         if (_customer != null && collision.tag == "Player")
         {
-            print("Player delivered food on table " + this.gameObject.name);
             _customer.DeliverFood();
         }
     }
