@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34ed4ba2742c243e99a48d45c2c25a17, type: 3}
   m_Name: VooshAudioCue
   m_EditorClassIdentifier: 
-  _audioClip: {fileID: 8300000, guid: efdcf6ba35b90004bab6acd2896d819d, type: 3}
+  _audioClip: {fileID: 8300000, guid: deac6f5d827d1264cbfa89cc4b53385e, type: 3}
   _volumeRange: {x: 1, y: 1}
   _pitchRange: {x: 1, y: 1}
