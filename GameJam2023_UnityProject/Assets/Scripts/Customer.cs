@@ -15,6 +15,11 @@ public class Customer : MonoBehaviour
     [SerializeField] float _dyingStateDuration = 3f;
     [SerializeField] CustomerPayText _payText;
 
+    // Audio
+    [SerializeField] public AudioSource _audioSource;
+    [SerializeField] public AudioCue _receiveFoodAudioCue;
+    [SerializeField] public AudioCue _failCustomerAudioCue;
+
     public enum State
     {
         WalkingToTable,
@@ -128,6 +133,7 @@ public class Customer : MonoBehaviour
 
             if (_currentTask.Success == false)
             {
+                PlayFailSound();
                 Leave();
                 return;
 
@@ -238,5 +244,15 @@ public class Customer : MonoBehaviour
     {
         if (collision.tag == "Player")
             Die();
+    }
+
+    public void PlayFailSound()
+    {
+        AudioTools.PlayAudioCue(_failCustomerAudioCue, _audioSource);
+    }
+
+    public void PlayReceiveFoodSound()
+    {
+        AudioTools.PlayAudioCue(_receiveFoodAudioCue, _audioSource);
     }
 }
