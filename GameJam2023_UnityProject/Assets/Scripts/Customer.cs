@@ -221,6 +221,8 @@ public class Customer : MonoBehaviour
 
         _balloonDialog.ShutUp();
 
+        _customerMovement.SetDirection(Vector2.zero);//Stop any movement
+
         _dyingStartTime = Time.time;
         _state = State.Dying;
     }
