@@ -12,6 +12,8 @@ public class GameManager : MonoBehaviour
     public GameObject scoreText;
     public int playerScore = 0;
     public int deathPenalty = 10;
+    [SerializeField] AudioSource _audioSource;
+    [SerializeField] AudioClip _madeMoneySound;
 
     Player _player;
     TextMeshProUGUI _scoreTextTMP;
@@ -50,6 +52,9 @@ public class GameManager : MonoBehaviour
     public void addScore(int scoreToAdd)
     {
         setScore(playerScore + scoreToAdd);
+
+        if (scoreToAdd > 0)
+            _audioSource.PlayOneShot(_madeMoneySound);
     }
 
     public void die()
