@@ -248,7 +248,12 @@ public class Customer : MonoBehaviour
     void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "Player")
-            Die();
+        {
+            if (_state != State.Dying)
+            {
+                Die();
+            }
+        }
     }
 
     //public void PlayFailSound()
