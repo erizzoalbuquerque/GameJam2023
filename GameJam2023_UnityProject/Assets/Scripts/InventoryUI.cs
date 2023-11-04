@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -57,6 +58,7 @@ public class InventoryUI : MonoBehaviour
         {
             //New Food Arrived
             PlayNewFoodAudio(playerFoods.Count);
+            _uiFoodIcons[playerFoods.Count-1].transform.DOPunchScale(transform.localScale * 1.07f, 0.5f, 1, 0.1f);
         }
         else
         {
@@ -74,6 +76,10 @@ public class InventoryUI : MonoBehaviour
     void OnPlayerFoodInventoryUpdateFailed()
     {
         PlayInventoryFullAudio();
+        foreach (Image img in _uiFoodIcons)
+        {
+            img.transform.DOShakeRotation(0.3f,30,10,0);
+        }
     }
 
     void PlayInventoryFullAudio()
