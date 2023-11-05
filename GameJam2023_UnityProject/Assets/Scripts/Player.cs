@@ -57,4 +57,10 @@ public class Player : MonoBehaviour
     {
         return new List<Food>(_foods);
     }
+
+    public void ThrowAway()
+    {
+        _foods.Clear();
+        playerFoodInventoryUpdated.Invoke();
+    }
 }
