@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 87262923323814127}
   - component: {fileID: 76081440434564894}
   - component: {fileID: 1023568918760352739}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Customer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -116,7 +116,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8351643930784694349}
   - component: {fileID: 2610783819488420785}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: _Visual
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -166,7 +166,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5671409822779997916}
   - component: {fileID: 2695892742253423103}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Square
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -249,7 +249,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4295106445556766532}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: _Audio
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -288,7 +288,7 @@ GameObject:
   - component: {fileID: 5003765186559944371}
   - component: {fileID: 728127922523088971}
   - component: {fileID: 4902935883341520481}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Customer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -559,7 +559,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8106115929370012840}
   - component: {fileID: 6447111557115252828}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Circle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -645,7 +645,7 @@ GameObject:
   - component: {fileID: 8407633275474993421}
   - component: {fileID: 321056530197510945}
   - component: {fileID: 631834477917198976}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: PayText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -831,7 +831,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2074489098834735244}
   - component: {fileID: 3196714472071139240}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Audio Source
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -957,9 +957,29 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1997874852877699831}
     m_Modifications:
+    - target: {fileID: 352026201041929661, guid: f597deae78962814a878cb7443e29219, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2122357457856543301, guid: f597deae78962814a878cb7443e29219, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 2504220965671885893, guid: f597deae78962814a878cb7443e29219, type: 3}
       propertyPath: m_Name
       value: BaloonDialog
+      objectReference: {fileID: 0}
+    - target: {fileID: 2504220965671885893, guid: f597deae78962814a878cb7443e29219, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2972480597198976546, guid: f597deae78962814a878cb7443e29219, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6558326236769661954, guid: f597deae78962814a878cb7443e29219, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7754848611445280585, guid: f597deae78962814a878cb7443e29219, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1000,6 +1020,14 @@ PrefabInstance:
     - target: {fileID: 7754848611445280585, guid: f597deae78962814a878cb7443e29219, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9080344121343303312, guid: f597deae78962814a878cb7443e29219, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 9102323685398167470, guid: f597deae78962814a878cb7443e29219, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
