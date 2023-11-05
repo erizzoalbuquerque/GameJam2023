@@ -228,6 +228,8 @@ public class Customer : MonoBehaviour
 
         _dyingStartTime = Time.time;
         _state = State.Dying;
+
+        GetComponent<CustomerAudio>().PlayScreamingSounds();
     }
 
     void Dying()
