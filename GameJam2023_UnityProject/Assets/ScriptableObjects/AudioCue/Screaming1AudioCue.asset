@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Screaming1AudioCue
   m_EditorClassIdentifier: 
   _audioClip: {fileID: 8300000, guid: b94ee7eab743ddc45894375a8a786e7d, type: 3}
-  _volumeRange: {x: 1, y: 1}
-  _pitchRange: {x: 1, y: 1}
+  _volumeRange: {x: 1.2, y: 1.2}
+  _pitchRange: {x: 0.8, y: 1.1}

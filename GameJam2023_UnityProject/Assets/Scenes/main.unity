@@ -440,9 +440,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8cf21e89a14054003a4c9956ff223b71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scoreText: {fileID: 1281971312}
-  playerScore: 0
   deathPenalty: 50
+  failureToSatisfyClientPenalty: 20
+  _scoreText: {fileID: 1281971312}
   _audioSource: {fileID: 222502046}
   _madeMoneySound: {fileID: 8300000, guid: ce98e418f99ad05448f7ca5a97f64eaf, type: 3}
   _lostMoneySound: {fileID: 8300000, guid: 950c7d609b94ea4478520fd5489974af, type: 3}
@@ -642,11 +642,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4837396172944556313, guid: 388eb097492cd450cb9f18e48252e769, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1
+      value: 1.2802744
       objectReference: {fileID: 0}
     - target: {fileID: 4837396172944556313, guid: 388eb097492cd450cb9f18e48252e769, type: 3}
       propertyPath: m_LocalScale.y
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4837396172944556313, guid: 388eb097492cd450cb9f18e48252e769, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.0076
       objectReference: {fileID: 0}
     - target: {fileID: 4837396172944556313, guid: 388eb097492cd450cb9f18e48252e769, type: 3}
       propertyPath: m_LocalPosition.y
@@ -8534,7 +8538,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1936007053
 Transform:
   m_ObjectHideFlags: 0
@@ -8562,7 +8566,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 8940549446814457946, guid: d5216c1accafc8648a1ba519856c16da, type: 2}
   m_audioClip: {fileID: 8300000, guid: 4ffca9331534c65449ba57bb63d809f2, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.75
   m_Pitch: 1
   Loop: 0
   Mute: 0

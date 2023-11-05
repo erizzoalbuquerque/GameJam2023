@@ -99,6 +99,8 @@ public class FoodTask : CustomerTask
 
             Pay();
         }
+        else
+            player.FailToDeliverFood();
     }
 
     void Pay()

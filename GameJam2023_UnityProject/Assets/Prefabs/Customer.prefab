@@ -450,6 +450,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: abf5e2c89537a0749ac0521e84bd11a4, type: 2}
   - {fileID: 11400000, guid: 2a45ccba553927a44949b9ab88eaea88, type: 2}
   - {fileID: 11400000, guid: a6888ac694900ba4397859afc5eab6b1, type: 2}
+  _complainigSounds:
+  - {fileID: 11400000, guid: 07138e4566d8d874497cf84cbdd6ec6a, type: 2}
+  - {fileID: 11400000, guid: 1f1b7b7808b764e4382e088fdbd7829b, type: 2}
+  - {fileID: 11400000, guid: 13593db5ae9b12144bc1ff4b14d8ca18, type: 2}
   _cartoonFallingSound: {fileID: 11400000, guid: 8b438be171ab6ff44a00dab7bfc89fca, type: 2}
   _squishSound: {fileID: 11400000, guid: 9735518f52b235547a1c87c9e7a3e249, type: 2}
   _vooshSound: {fileID: 11400000, guid: 031d0dee19bbb114db04263a363542d1, type: 2}

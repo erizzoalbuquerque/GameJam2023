@@ -63,4 +63,9 @@ public class CustomerPayText : MonoBehaviour
 
         _timer = _duration;
     }
+
+    private void OnDestroy()
+    {
+        this.transform.DOComplete();
+    }
 }

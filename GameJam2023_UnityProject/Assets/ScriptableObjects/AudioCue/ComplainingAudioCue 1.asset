@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 34ed4ba2742c243e99a48d45c2c25a17, type: 3}
-  m_Name: Screaming3AudioCue
+  m_Name: ComplainingAudioCue 1
   m_EditorClassIdentifier: 
-  _audioClip: {fileID: 8300000, guid: 7062ba00da0489d4e84397424805c195, type: 3}
-  _volumeRange: {x: 1.2, y: 1.2}
-  _pitchRange: {x: 0.8, y: 1.1}
+  _audioClip: {fileID: 8300000, guid: 3e96f8e0fa021c74cab01da4ce6705a1, type: 3}
+  _volumeRange: {x: 0.1, y: 0.1}
+  _pitchRange: {x: 1, y: 1}

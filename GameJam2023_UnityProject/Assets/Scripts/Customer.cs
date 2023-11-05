@@ -134,7 +134,9 @@ public class Customer : MonoBehaviour
 
             if (_currentTask.Success == false)
             {
-                //PlayFailSound();
+                GetComponent<CustomerAudio>().PlayComplainingSounds();
+                Pay(-GameManager.Instance.FailureToSatisfyClientPenalty);
+                _isAngry = true;
                 Leave();
                 return;
 
@@ -158,8 +160,6 @@ public class Customer : MonoBehaviour
 
     void WalkOut()
     {
-        _isAngry = true;
-
         Vector3 doorPosition = _door.transform.position;
 
         Vector2 goalDirection = _pathPlanner.GetDirectionToGoal(doorPosition, this.transform.position);
@@ -219,8 +219,7 @@ public class Customer : MonoBehaviour
             _currentTask = null;
         }
 
-        _payText.Play( - GameManager.Instance.deathPenalty);
-        GameManager.Instance.die();
+        Pay(-GameManager.Instance.DeathPenalty);
 
         _balloonDialog.ShutUp();
 
@@ -229,6 +228,7 @@ public class Customer : MonoBehaviour
         _dyingStartTime = Time.time;
         _state = State.Dying;
 
+        _audioSource.Stop();
         GetComponent<CustomerAudio>().PlayScreamingSounds();
     }
 
@@ -244,7 +244,7 @@ public class Customer : MonoBehaviour
     public void Pay(int amount)
     {
         _payText.Play(amount);
-        GameManager.Instance.addScore(amount);
+        GameManager.Instance.AddScore(amount);
     }
 
     void OnTriggerEnter2D(Collider2D collision)

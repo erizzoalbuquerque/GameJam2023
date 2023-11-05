@@ -9,13 +9,14 @@ public class GameManager : MonoBehaviour
 {
     static GameManager _instance;
 
-    public GameObject scoreText;
-    public int playerScore = 0;
-    public int deathPenalty = 10;
+    [SerializeField] int deathPenalty = 10;
+    [SerializeField] int failureToSatisfyClientPenalty = 20;
+    [SerializeField] GameObject _scoreText;
     [SerializeField] AudioSource _audioSource;
     [SerializeField] AudioClip _madeMoneySound;
     [SerializeField] AudioClip _lostMoneySound;
 
+    int _playerScore = 0;
     Player _player;
     TextMeshProUGUI _scoreTextTMP;
 
@@ -38,6 +39,8 @@ public class GameManager : MonoBehaviour
     }
 
     public Player Player { get => _player;}
+    public int DeathPenalty { get => deathPenalty; }
+    public int FailureToSatisfyClientPenalty { get => failureToSatisfyClientPenalty; }
 
     void Awake()
     {
@@ -46,29 +49,31 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        _scoreTextTMP = scoreText.GetComponent<TextMeshProUGUI>();
-        setScore(0);
+        _scoreTextTMP = _scoreText.GetComponent<TextMeshProUGUI>();
+        SetScore(0);
     }
 
-    public void addScore(int scoreToAdd)
+    public void AddScore(int scoreToAdd)
     {
-        setScore(playerScore + scoreToAdd);
+        SetScore(_playerScore + scoreToAdd);
 
         if (scoreToAdd > 0)
             _audioSource.PlayOneShot(_madeMoneySound);
-    }
-
-    public void die()
-    {
-        addScore(-deathPenalty);
-        if (_lostMoneySound != null)
+        else if (scoreToAdd < 0)
             _audioSource.PlayOneShot(_lostMoneySound);
     }
 
-    void setScore(int score)
+    //public void Die()
+    //{
+    //    AddScore(-deathPenalty);
+    //    if (_lostMoneySound != null)
+    //        _audioSource.PlayOneShot(_lostMoneySound);
+    //}
+
+    void SetScore(int score)
     {
-        playerScore = score;
-        _scoreTextTMP.text = playerScore.ToString();
+        _playerScore = score;
+        _scoreTextTMP.text = _playerScore.ToString();
     }
 
 }

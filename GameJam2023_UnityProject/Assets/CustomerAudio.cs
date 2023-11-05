@@ -6,6 +6,7 @@ using UnityEngine;
 public class CustomerAudio : MonoBehaviour
 {
     [SerializeField] List<AudioCue> _screamingSounds;
+    [SerializeField] List<AudioCue> _complainigSounds;
     [SerializeField] AudioCue _cartoonFallingSound;
     [SerializeField] AudioCue _squishSound;
     [SerializeField] AudioCue _vooshSound;
@@ -41,5 +42,10 @@ public class CustomerAudio : MonoBehaviour
     public void PlayVooshSound()
     {
         AudioTools.PlayAudioCue(_vooshSound, _audioSource);
+    }
+
+    public void PlayComplainingSounds()
+    {
+        AudioTools.PlayRandAudioCue(_complainigSounds,_audioSource);
     }
 }

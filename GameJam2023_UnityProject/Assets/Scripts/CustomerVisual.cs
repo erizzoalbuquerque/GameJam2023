@@ -23,8 +23,11 @@ public class CustomerVisual : MonoBehaviour
     {
         if (_customer.CurrentSate == Customer.State.WalkingToTable || _customer.CurrentSate == Customer.State.Leaving) 
         {
+            _animator.SetBool("isAngry", _customer.IsAngry);
 
             _animator.SetBool("isSitting", false);
+
+
             if (_customerMovement.CurrentVelocity.x > 0f)
                 FaceDirection(true);
             else if (_customerMovement.CurrentVelocity.x < 0f)

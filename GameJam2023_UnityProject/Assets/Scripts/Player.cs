@@ -48,6 +48,11 @@ public class Player : MonoBehaviour
         }
     }
 
+    public void FailToDeliverFood()
+    {
+        playerFoodInventoryUpdateFailed();
+    }
+
     public bool HasFood(Food food)
     {
         return _foods.Contains(food);
