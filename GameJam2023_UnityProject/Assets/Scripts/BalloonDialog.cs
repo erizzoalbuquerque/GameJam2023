@@ -9,6 +9,7 @@ public class BalloonDialog : MonoBehaviour
     [SerializeField] GameObject _balloon;
     [SerializeField] SpriteRenderer _fillerSpriteRenderer;
     [SerializeField] Color _fillerAlmostTimeOutColor;
+    [SerializeField] AudioSource _audioSource;
 
     Material _fillerMaterial;
 
@@ -56,6 +57,8 @@ public class BalloonDialog : MonoBehaviour
         _fillerMaterial.SetFloat("_ClipUvRight", 1f - progress);
         if (progress > 0.7)
         {
+            if (_audioSource.isPlaying == false) 
+                _audioSource.Play();
             _fillerMaterial.color = _fillerAlmostTimeOutColor;
             _balloon.transform.localScale = Vector3.one * (1f + 0.2f * Mathf.Abs(Mathf.Sin( (progress-0.7f) * Mathf.PI * 10f)));
         }
@@ -76,6 +79,7 @@ public class BalloonDialog : MonoBehaviour
 
     void RemoveBalloon()
     {
+        _audioSource.Stop();
         _balloon.SetActive(false);
         _isRunning = false;
     }
