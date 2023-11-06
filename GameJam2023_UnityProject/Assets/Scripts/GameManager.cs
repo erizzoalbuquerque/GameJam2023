@@ -131,9 +131,7 @@ public class GameManager : MonoBehaviour
         {
             StartCoroutine(IntroCoroutine());
             _introStateWasSetup = true;
-        }
-
-        
+        }        
     }
 
     void DoPlayingGameState()
@@ -198,6 +196,16 @@ public class GameManager : MonoBehaviour
         //}
     }
 
+    public void SetMusicPitch(float newPitch)
+    {
+        _musicAudioSource.pitch = newPitch;
+    }
+
+    public void SetNumberOfCustomersAtSameTime(int newNumber)
+    {
+        RoomManager.Instance.MaxNumberOfCustomersAtSameTime = newNumber;
+    }
+
     IEnumerator IntroCoroutine()
     {
         float cameraAnimationTime = 3f;
@@ -210,10 +218,5 @@ public class GameManager : MonoBehaviour
         yield return new WaitForSeconds(introCutsceneTime);
 
         _state = State.PlayingGame;
-    }
-
-    private void OnDestroy()
-    {
-        Time.timeScale = 1f;
     }
 }

@@ -18,4 +18,14 @@ public class GameOverCutscene : MonoBehaviour
             source.pitch *= Time.timeScale; 
         }
     }
+
+    void OnDisable() 
+    {
+        Time.timeScale = 1f;
+    }
+
+    void OnDestroy()
+    {
+        Time.timeScale = 1f;
+    }
 }

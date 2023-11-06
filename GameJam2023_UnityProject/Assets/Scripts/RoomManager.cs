@@ -30,6 +30,8 @@ public class RoomManager : MonoBehaviour
         }
     }
 
+    public int MaxNumberOfCustomersAtSameTime { get => _maxNumberOfCustomersAtSameTime; set => _maxNumberOfCustomersAtSameTime = value; }
+
     // Start is called before the first frame update
     void Awake()
     {
