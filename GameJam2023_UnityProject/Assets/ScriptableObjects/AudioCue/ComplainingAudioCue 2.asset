@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: ComplainingAudioCue 2
   m_EditorClassIdentifier: 
   _audioClip: {fileID: 8300000, guid: bd7eae7878d07ae40b079cf08cac8407, type: 3}
-  _volumeRange: {x: 0.1, y: 0.1}
+  _volumeRange: {x: 0.4, y: 0.4}
   _pitchRange: {x: 1, y: 1}

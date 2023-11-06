@@ -21,7 +21,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] AudioClip _lostMoneySound;
 
     State _state = State.Intro;
-    float _gameTime;
+    float _currentGameTime;
     float _gameStartTime;
     int _playerScore = 0;
     Player _player;
@@ -54,7 +54,8 @@ public class GameManager : MonoBehaviour
     public Player Player { get => _player;}
     public int DeathPenalty { get => _customerKillPenalty; }
     public int FailureToSatisfyClientPenalty { get => _failureToServeCustomerPenalty; }
-    public float GameTime { get => _gameTime; }
+    public float CurrentGameTime { get => _currentGameTime; }
+    public int GameDuration { get => _gameDuration;}
 
     void Awake()
     {
@@ -67,7 +68,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         EnableGame(false);
-        _gameTime = 0f;
+        _currentGameTime = 0f;
         SetScore(_startMoney);
         _state = State.Intro;
     }
@@ -142,14 +143,14 @@ public class GameManager : MonoBehaviour
         }
 
         //Check Victory Condition
-        if (_gameTime >= _gameDuration)
+        if (_currentGameTime >= _gameDuration)
         {
             _state = State.Victory;
             return;
         }
 
         //Update Ttime
-        _gameTime = Time.time - _gameStartTime;
+        _currentGameTime = Time.time - _gameStartTime;
     }
 
     void DoGameOverState()
@@ -159,6 +160,7 @@ public class GameManager : MonoBehaviour
         {
             EnableGame(false);
             _gameOverStateWasSetup = true;
+            _audioSource.Stop();
         }
     }
 
@@ -169,6 +171,7 @@ public class GameManager : MonoBehaviour
         {
             EnableGame(false);
             _victoryStateWasSetup = true;
+            _audioSource.Stop();
         }
     }
 
