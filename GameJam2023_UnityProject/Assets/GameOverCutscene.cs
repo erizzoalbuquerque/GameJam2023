@@ -1,21 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.Rendering;
 
 public class GameOverCutscene : MonoBehaviour
 {
-    Camera _mainCamera;
 
-    // Start is called before the first frame update
-    void Start()
+    void OnEnable()
     {
         Time.timeScale = 0.5f;
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        List<AudioSource> sources = FindObjectsOfType<AudioSource>().ToList();
+
+        foreach (AudioSource source in sources) 
+        {
+            source.pitch *= Time.timeScale; 
+        }
     }
 }

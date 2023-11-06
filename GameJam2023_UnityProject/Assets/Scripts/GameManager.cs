@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
-
+using DG.Tweening;
 
 public class GameManager : MonoBehaviour
 {
@@ -17,6 +17,7 @@ public class GameManager : MonoBehaviour
     [Header("References")]
     [SerializeField] ScoreUI _scoreUI;
     [SerializeField] AudioSource _audioSource;
+    [SerializeField] AudioSource _musicAudioSource;
     [SerializeField] AudioClip _madeMoneySound;
     [SerializeField] AudioClip _lostMoneySound;
     [SerializeField] GameObject _gameOverCutsceneGameObject;
@@ -26,6 +27,7 @@ public class GameManager : MonoBehaviour
     float _gameStartTime;
     int _playerScore = 0;
     Player _player;
+    bool _introStateWasSetup;
     bool _playingGameStateWasSetup;
     bool _gameOverStateWasSetup;
     bool _victoryStateWasSetup;
@@ -59,7 +61,12 @@ public class GameManager : MonoBehaviour
 
     void Awake()
     {
-        _player = FindAnyObjectByType<Player>();   
+        _player = FindAnyObjectByType<Player>();
+
+        _introStateWasSetup = false;
+        _playingGameStateWasSetup = false;
+        _gameOverStateWasSetup = false;
+        _victoryStateWasSetup = false;
     }
 
     void Start()
@@ -96,6 +103,9 @@ public class GameManager : MonoBehaviour
 
     public void AddScore(int scoreToAdd)
     {
+        if (_state != State.PlayingGame)
+            return;
+
         SetScore(_playerScore + scoreToAdd);
 
         if (scoreToAdd > 0)
@@ -117,9 +127,13 @@ public class GameManager : MonoBehaviour
 
     void DoIntroState()
     {
-        //Starting Cutscene
-        //And then;
-        _state = State.PlayingGame;
+        if (_introStateWasSetup == false)
+        {
+            StartCoroutine(IntroCoroutine());
+            _introStateWasSetup = true;
+        }
+
+        
     }
 
     void DoPlayingGameState()
@@ -157,7 +171,7 @@ public class GameManager : MonoBehaviour
         {
             EnableGame(false);
             _gameOverStateWasSetup = true;
-            _audioSource.Stop();
+            //_musicAudioSource.Stop();
             _gameOverCutsceneGameObject.SetActive(true);
         }
     }
@@ -169,12 +183,37 @@ public class GameManager : MonoBehaviour
         {
             EnableGame(false);
             _victoryStateWasSetup = true;
-            _audioSource.Stop();
+            _musicAudioSource.Stop();
         }
     }
 
     void EnableGame(bool active)
     {
-        //Enable/Disable playerMovement, playerInput, customerFactory,....
+        //_player.GetComponent<PlayerInput>().enabled = active;
+        FindAnyObjectByType<CostumerFactory>().enabled = active;
+
+        //if (active == false)
+        //{
+        //    _player.GetComponent<PlayerMovement>().SetInput(Vector2.zero);
+        //}
+    }
+
+    IEnumerator IntroCoroutine()
+    {
+        float cameraAnimationTime = 3f;
+        float introCutsceneTime = 3f;
+
+        float startSize = Camera.main.orthographicSize;
+        Camera.main.orthographicSize = 5f;
+        DOTween.To(() => Camera.main.orthographicSize, x => Camera.main.orthographicSize = x, startSize, cameraAnimationTime).SetEase(Ease.InCubic);
+        
+        yield return new WaitForSeconds(introCutsceneTime);
+
+        _state = State.PlayingGame;
+    }
+
+    private void OnDestroy()
+    {
+        Time.timeScale = 1f;
     }
 }

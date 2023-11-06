@@ -10,15 +10,21 @@ public class ScoreUI : MonoBehaviour
     [SerializeField] Color _dangerColor = Color.red;
 
     int _currentScore;
+    Vector3 _startTextLocalScale;
 
     // Start is called before the first frame update
     void Start()
     {
+        _startTextLocalScale = _text.transform.localScale;
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (_currentScore <= 0f)
+        {
+            _text.transform.localScale = _startTextLocalScale * (1f + 0.2f * Mathf.Abs(Mathf.Sin(Mathf.PI * 2f * Time.time)));
+        }
         
     }
 
@@ -27,7 +33,7 @@ public class ScoreUI : MonoBehaviour
         _currentScore = newScore;
         _text.text = _currentScore.ToString();
 
-        if (_currentScore > 50)
+        if (_currentScore >= 100)
             _text.color = _normalColor;
         else
             _text.color = _dangerColor;

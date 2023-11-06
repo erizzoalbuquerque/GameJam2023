@@ -85,6 +85,22 @@ AudioMixerSnapshotController:
   m_FloatValues:
     e4e762ed22e22f749b379e216b466372: -9.833286
   m_TransitionOverrides: {}
+--- !u!244 &2028077565080940113
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_EffectID: 9a55b6b3aaade51468a1ef0553c2794a
+  m_EffectName: Lowpass Simple
+  m_MixLevel: a089a322827daeb429997b2ae7d310f9
+  m_Parameters:
+  - m_ParameterName: Cutoff freq
+    m_GUID: 0762386ff1a0d3e4bb31c89342109787
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0
 --- !u!243 &2365552333895841929
 AudioMixerGroupController:
   m_ObjectHideFlags: 0

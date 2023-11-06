@@ -644,6 +644,8 @@ GameObject:
   - component: {fileID: 242715372}
   - component: {fileID: 242715374}
   - component: {fileID: 242715373}
+  - component: {fileID: 242715376}
+  - component: {fileID: 242715375}
   m_Layer: 0
   m_Name: GameOverCutscene
   m_TagString: Untagged
@@ -708,6 +710,35 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _loadScene: {fileID: 102900000, guid: 7c7ce2a7220b86447b2b79e55a090eaf, type: 3}
+--- !u!114 &242715375
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 242715371}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IsGlobal: 1
+  priority: 0
+  blendDistance: 0
+  weight: 1
+  sharedProfile: {fileID: 11400000, guid: c0e2b2dc3052c20448bc06ef038a574a, type: 2}
+--- !u!114 &242715376
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 242715371}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 714a1eeee40a49b439be9cd6d2773919, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &244387740
 GameObject:
   m_ObjectHideFlags: 0
@@ -927,7 +958,7 @@ GameObject:
   - component: {fileID: 438754040}
   - component: {fileID: 438754042}
   - component: {fileID: 438754041}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
