@@ -12,9 +12,15 @@ EditorBuildSettings:
     path: Assets/Scenes/MovementTest.unity
     guid: e6e38071a0b7d9a45981db5cc30da789
   - enabled: 0
-    path: Assets/mainZoom.unity
+    path: Assets/Scenes/Main_withZoom.unity
     guid: 52a7f7ff3902fd540af02fa16325c2b7
+  - enabled: 1
+    path: Assets/Scenes/StartScreen.unity
+    guid: eedd4c4f138ada94a903a937eab64d86
   - enabled: 1
     path: Assets/Scenes/main.unity
     guid: cd9a322d924624b4080bc2ffa0e86c6d
+  - enabled: 1
+    path: Assets/Scenes/GameOver.unity
+    guid: 7c7ce2a7220b86447b2b79e55a090eaf
   m_configObjects: {}

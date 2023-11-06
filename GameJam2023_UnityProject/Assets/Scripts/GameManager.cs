@@ -15,20 +15,20 @@ public class GameManager : MonoBehaviour
     [SerializeField] int _startMoney = 100;
     [SerializeField] int _gameDuration = 120;
     [Header("References")]
-    [SerializeField] GameObject _scoreText;
+    [SerializeField] ScoreUI _scoreUI;
     [SerializeField] AudioSource _audioSource;
     [SerializeField] AudioClip _madeMoneySound;
     [SerializeField] AudioClip _lostMoneySound;
+    [SerializeField] GameObject _gameOverCutsceneGameObject;
 
     State _state = State.Intro;
     float _currentGameTime;
     float _gameStartTime;
     int _playerScore = 0;
     Player _player;
-    TextMeshProUGUI _scoreTextTMP;
-    private bool _playingGameStateWasSetup;
-    private bool _gameOverStateWasSetup;
-    private bool _victoryStateWasSetup;
+    bool _playingGameStateWasSetup;
+    bool _gameOverStateWasSetup;
+    bool _victoryStateWasSetup;
 
 
     enum State { Intro, PlayingGame, GameOver, Victory };
@@ -59,10 +59,7 @@ public class GameManager : MonoBehaviour
 
     void Awake()
     {
-        _player = FindAnyObjectByType<Player>();
-        _scoreTextTMP = _scoreText.GetComponent<TextMeshProUGUI>();
-
-        
+        _player = FindAnyObjectByType<Player>();   
     }
 
     void Start()
@@ -110,7 +107,7 @@ public class GameManager : MonoBehaviour
     void SetScore(int score)
     {
         _playerScore = score;
-        _scoreTextTMP.text = _playerScore.ToString();
+        _scoreUI.SetScore(score);
     }
 
     void Restart()
@@ -161,6 +158,7 @@ public class GameManager : MonoBehaviour
             EnableGame(false);
             _gameOverStateWasSetup = true;
             _audioSource.Stop();
+            _gameOverCutsceneGameObject.SetActive(true);
         }
     }
 
