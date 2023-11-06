@@ -50,7 +50,7 @@ public class Player : MonoBehaviour
 
     public void FailToDeliverFood()
     {
-        playerFoodInventoryUpdateFailed();
+        //playerFoodInventoryUpdateFailed();
     }
 
     public bool HasFood(Food food)

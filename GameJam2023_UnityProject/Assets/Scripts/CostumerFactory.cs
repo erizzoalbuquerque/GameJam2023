@@ -10,7 +10,7 @@ public class CostumerFactory : MonoBehaviour
     [SerializeField] Customer _customerPrefab;
 
     bool _resetWaitTime = true;
-    float _lastCreateTime = 0;
+    float _lastCreationTime = 0;
     int _waitTime;
 
     // Start is called before the first frame update
@@ -28,7 +28,7 @@ public class CostumerFactory : MonoBehaviour
             _resetWaitTime = false;
         } 
 
-        if ((Time.time - _lastCreateTime) > _waitTime)
+        if ((Time.time - _lastCreationTime) > _waitTime)
         {
             CreateCustomer();
         }
@@ -44,7 +44,7 @@ public class CostumerFactory : MonoBehaviour
             _customer.Initialize(_table);
         }
 
-        _lastCreateTime = Time.time;
+        _lastCreationTime = Time.time;
         _resetWaitTime = true;
     }
 }

@@ -1,13 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class RoomManager : MonoBehaviour
 {
+    static RoomManager _instance;
+
     List<Table> _tables;
     List<Door> _doors;
 
-    static RoomManager _instance;
+    [SerializeField] int _maxNumberOfCustomersAtSameTime;
 
     public static RoomManager Instance
     {
@@ -36,17 +39,18 @@ public class RoomManager : MonoBehaviour
 
     public Table GetFreeTable()
     {
-        for (int i = 0; i < _tables.Count; i++)
+        List<Table> freeTables = _tables.Where(x => x.IsFree() == true).ToList();
+
+        int numberOfOccupiedTables = _tables.Count - freeTables.Count;
+
+        if (numberOfOccupiedTables >= _maxNumberOfCustomersAtSameTime)
         {
-            Table candidateTable = _tables[i];
-
-            if (candidateTable.IsFree())
-            {
-                return candidateTable;
-            }
+            return null;
         }
-
-        return null;
+        else
+        {
+            return freeTables[Random.Range(0, freeTables.Count)];
+        }
     }
 
     public Door GetDoor()

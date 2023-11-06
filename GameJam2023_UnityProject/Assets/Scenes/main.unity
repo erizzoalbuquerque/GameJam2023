@@ -440,8 +440,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8cf21e89a14054003a4c9956ff223b71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deathPenalty: 50
-  failureToSatisfyClientPenalty: 20
+  _customerKillPenalty: 10
+  _failureToServeCustomerPenalty: 20
+  _startMoney: 100
+  _gameDuration: 120
   _scoreText: {fileID: 1281971312}
   _audioSource: {fileID: 222502046}
   _madeMoneySound: {fileID: 8300000, guid: ce98e418f99ad05448f7ca5a97f64eaf, type: 3}
@@ -8389,6 +8391,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1a9e09b618b046e3abb1b185862edfb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _maxNumberOfCustomersAtSameTime: 4
 --- !u!4 &1860587599
 Transform:
   m_ObjectHideFlags: 0
