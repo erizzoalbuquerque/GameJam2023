@@ -266,6 +266,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _musicPitch: 1.4
   _numberOfCustomersAtSameTime: 3
+  _addNewTable: 0
   _audioSource: {fileID: 1199897}
   _newPhaseSound: {fileID: 0}
 --- !u!1 &63715830
@@ -1075,6 +1076,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _musicPitch: 1.2
   _numberOfCustomersAtSameTime: 2
+  _addNewTable: 0
   _audioSource: {fileID: 246628239}
   _newPhaseSound: {fileID: 0}
 --- !u!4 &252635404 stripped
@@ -1769,6 +1771,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _musicPitch: 1.8
   _numberOfCustomersAtSameTime: 5
+  _addNewTable: 1
   _audioSource: {fileID: 401052847}
   _newPhaseSound: {fileID: 0}
 --- !u!1 &438754039
@@ -2953,6 +2956,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _musicPitch: 1.6
   _numberOfCustomersAtSameTime: 4
+  _addNewTable: 0
   _audioSource: {fileID: 812735697}
   _newPhaseSound: {fileID: 0}
 --- !u!1 &825915880
@@ -9539,6 +9543,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _musicPitch: 1
   _numberOfCustomersAtSameTime: 1
+  _addNewTable: 0
   _audioSource: {fileID: 1662970421}
   _newPhaseSound: {fileID: 0}
 --- !u!82 &1662970421
@@ -18886,6 +18891,10 @@ PrefabInstance:
     - target: {fileID: 4990289559137136710, guid: 7433cd101d293c5448ace7da3133decb, type: 3}
       propertyPath: m_Name
       value: Table 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4990289559137136710, guid: 7433cd101d293c5448ace7da3133decb, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6077596972627680564, guid: 7433cd101d293c5448ace7da3133decb, type: 3}
       propertyPath: m_LocalPosition.x
