@@ -58,6 +58,11 @@ public class Table : MonoBehaviour
             return false;
     }
 
+    public bool IsActive()
+    {
+        return gameObject.active;
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (_customer != null && collision.tag == "Player")

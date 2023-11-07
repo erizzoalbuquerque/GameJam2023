@@ -6,6 +6,7 @@ public class GamePhase : MonoBehaviour
 {
     [SerializeField] float _musicPitch = 1.0f;
     [SerializeField] int _numberOfCustomersAtSameTime = 1;
+    [SerializeField] bool _addNewTable = false;
     [SerializeField] AudioSource _audioSource;
     [SerializeField] AudioClip _newPhaseSound;
 
@@ -17,5 +18,10 @@ public class GamePhase : MonoBehaviour
         
         if (_newPhaseSound != null)
             _audioSource.PlayOneShot(_newPhaseSound);
+
+        if (_addNewTable)
+        {
+            GameManager.Instance.AddNewTable();
+        }
     }
 }

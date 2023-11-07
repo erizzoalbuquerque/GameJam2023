@@ -38,15 +38,16 @@ public class RoomManager : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-        _tables = new List<Table> (FindObjectsOfType<Table>());
+        _tables = new List<Table> (FindObjectsOfType<Table>(true));
         _doors= new List<Door>(FindObjectsOfType<Door>());
     }
 
     public Table GetFreeTable()
     {
-        List<Table> freeTables = _tables.Where(x => x.IsFree() == true).ToList();
+        List<Table> freeTables = _tables.Where(x => x.IsFree() && x.IsActive()).ToList();
+        List<Table> activeTables = _tables.Where(x => x.IsActive()).ToList();
 
-        int numberOfOccupiedTables = _tables.Count - freeTables.Count;
+        int numberOfOccupiedTables = activeTables.Count - freeTables.Count;
 
         if (numberOfOccupiedTables >= _maxNumberOfCustomersAtSameTime)
         {
@@ -54,12 +55,22 @@ public class RoomManager : MonoBehaviour
         }
         else
         {
-            return freeTables[Random.Range(0, freeTables.Count)];
+            return activeTables[Random.Range(0, activeTables.Count)];
         }
     }
 
     public Door GetDoor()
     {
         return _doors[Random.Range(0, _doors.Count)];
+    }
+
+    public void EnableNewTable()
+    {
+        List<Table> inactiveTables = _tables.Where(x => x.IsActive() == false).ToList();
+
+        if (inactiveTables.Count > 0)
+        {
+            inactiveTables[0].gameObject.SetActive(true);
+        }    
     }
 }

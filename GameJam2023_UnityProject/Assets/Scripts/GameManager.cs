@@ -40,7 +40,7 @@ public class GameManager : MonoBehaviour
 
 
     enum State { Intro, PlayingGame, GameOver, Victory };
-    enum PhaseState { None, Stage1, Stage2, Stage3, Stage4 };
+    enum PhaseState { None, Stage1, Stage2, Stage3, Stage4, Stage5 };
 
     public static GameManager Instance
     {
@@ -206,7 +206,7 @@ public class GameManager : MonoBehaviour
 
         } else
         {
-            // Do nothing
+            SetPhase(PhaseState.Stage5);
         }
 
     }
@@ -253,6 +253,11 @@ public class GameManager : MonoBehaviour
     public void SetNumberOfCustomersAtSameTime(int newNumber)
     {
         RoomManager.Instance.MaxNumberOfCustomersAtSameTime = newNumber;
+    }
+
+    public void AddNewTable()
+    {
+        RoomManager.Instance.EnableNewTable();
     }
 
     IEnumerator IntroCoroutine()
