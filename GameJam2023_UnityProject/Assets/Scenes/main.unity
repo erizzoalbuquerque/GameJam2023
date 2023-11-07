@@ -802,7 +802,7 @@ MonoBehaviour:
   _customerKillPenalty: 50
   _failureToServeCustomerPenalty: 20
   _startMoney: 100
-  _gameDuration: 20
+  _gameDuration: 120
   _scoreUI: {fileID: 161730380}
   _audioSource: {fileID: 222502046}
   _musicAudioSource: {fileID: 1936007054}
