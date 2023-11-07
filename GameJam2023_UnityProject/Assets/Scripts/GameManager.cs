@@ -21,12 +21,18 @@ public class GameManager : MonoBehaviour
     [SerializeField] AudioClip _madeMoneySound;
     [SerializeField] AudioClip _lostMoneySound;
     [SerializeField] GameObject _gameOverCutsceneGameObject;
+    [SerializeField] List<GamePhase> _gamePhases;
 
-    State _state = State.Intro;
+    State _state;
+    PhaseState _phaseState;
+
     float _currentGameTime;
     float _gameStartTime;
     int _playerScore = 0;
+
     Player _player;
+    GamePhase _phase;
+
     bool _introStateWasSetup;
     bool _playingGameStateWasSetup;
     bool _gameOverStateWasSetup;
@@ -34,6 +40,7 @@ public class GameManager : MonoBehaviour
 
 
     enum State { Intro, PlayingGame, GameOver, Victory };
+    enum PhaseState { None, Stage1, Stage2, Stage3, Stage4 };
 
     public static GameManager Instance
     {
@@ -57,7 +64,8 @@ public class GameManager : MonoBehaviour
     public int DeathPenalty { get => _customerKillPenalty; }
     public int FailureToSatisfyClientPenalty { get => _failureToServeCustomerPenalty; }
     public float CurrentGameTime { get => _currentGameTime; }
-    public int GameDuration { get => _gameDuration;}
+    public float GameDuration { get => _gameDuration;}
+    public float NormalizedGameTime { get => _currentGameTime / _gameDuration; }
 
     void Awake()
     {
@@ -75,6 +83,7 @@ public class GameManager : MonoBehaviour
         _currentGameTime = 0f;
         SetScore(_startMoney);
         _state = State.Intro;
+        SetPhase(PhaseState.Stage1);
     }
 
     void Update()
@@ -120,6 +129,23 @@ public class GameManager : MonoBehaviour
         _scoreUI.SetScore(score);
     }
 
+    void SetPhase(PhaseState phaseState)
+    {
+        if (_phaseState != phaseState)
+        {
+            //Deactivate current phase
+            if (_phase != null)
+            {
+                _phase.gameObject.SetActive(false);
+            }
+
+            //Activate new phase
+            _phaseState = phaseState;
+            _phase = _gamePhases[(int) _phaseState - 1];
+            _phase.gameObject.SetActive(true);
+        }
+    }
+
     void Restart()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().ToString());
@@ -160,6 +186,29 @@ public class GameManager : MonoBehaviour
 
         //Update Ttime
         _currentGameTime = Time.time - _gameStartTime;
+
+        //Update Phase
+        if (NormalizedGameTime < 0.2)
+        {
+            SetPhase(PhaseState.Stage1);
+
+        } else if (NormalizedGameTime < 0.4)
+        {
+            SetPhase(PhaseState.Stage2);
+
+        } else if (NormalizedGameTime < 0.6)
+        {
+            SetPhase(PhaseState.Stage3);
+
+        } else if (NormalizedGameTime < 0.8)
+        {
+            SetPhase(PhaseState.Stage4);
+
+        } else
+        {
+            // Do nothing
+        }
+
     }
 
     void DoGameOverState()
