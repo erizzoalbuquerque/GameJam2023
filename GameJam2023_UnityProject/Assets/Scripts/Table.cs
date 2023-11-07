@@ -8,6 +8,7 @@ public class Table : MonoBehaviour
 {
     [SerializeField] Transform seat;
     [SerializeField] bool randomSeatPostion = false;
+    [SerializeField] Transform tableInversionTransform;
 
     Customer _customer;
 
@@ -24,7 +25,7 @@ public class Table : MonoBehaviour
             }
             else
             {
-                this.transform.localScale = new Vector3(-1f,1f,1f);
+                tableInversionTransform.transform.localScale = new Vector3(-1f,1f,1f);
             }
         }        
     }
@@ -56,6 +57,11 @@ public class Table : MonoBehaviour
             return true;
         else
             return false;
+    }
+
+    public bool IsActive()
+    {
+        return gameObject.active;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
