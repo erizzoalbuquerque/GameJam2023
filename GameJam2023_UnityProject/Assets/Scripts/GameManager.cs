@@ -8,6 +8,7 @@ using DG.Tweening;
 public class GameManager : MonoBehaviour
 {
     static GameManager _instance;
+    public static int lastScore = 100;
 
     [Header("Game Parameters")]
     [SerializeField] int _customerKillPenalty = 10;
@@ -230,6 +231,7 @@ public class GameManager : MonoBehaviour
         if (_victoryStateWasSetup == false)
         {
             EnableGame(false);
+            lastScore = _playerScore;
             _victoryStateWasSetup = true;
             _musicAudioSource.Stop();
             _victoryCutsceneGameObject.SetActive(true);
