@@ -815,7 +815,7 @@ MonoBehaviour:
   - {fileID: 1199898}
   - {fileID: 812735698}
   - {fileID: 401052848}
-  _victoryCutsceneGameObject: {fileID: 0}
+  _victoryCutsceneGameObject: {fileID: 1599429161}
 --- !u!4 &222502045
 Transform:
   m_ObjectHideFlags: 0
