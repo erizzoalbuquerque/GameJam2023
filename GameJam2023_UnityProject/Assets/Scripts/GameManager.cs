@@ -22,6 +22,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] AudioClip _lostMoneySound;
     [SerializeField] GameObject _gameOverCutsceneGameObject;
     [SerializeField] List<GamePhase> _gamePhases;
+    [SerializeField] GameObject _victoryCutsceneGameObject;
 
     State _state;
     PhaseState _phaseState;
@@ -231,6 +232,7 @@ public class GameManager : MonoBehaviour
             EnableGame(false);
             _victoryStateWasSetup = true;
             _musicAudioSource.Stop();
+            _victoryCutsceneGameObject.SetActive(true);
         }
     }
 
