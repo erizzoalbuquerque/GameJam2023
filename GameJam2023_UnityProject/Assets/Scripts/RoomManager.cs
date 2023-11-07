@@ -44,7 +44,7 @@ public class RoomManager : MonoBehaviour
 
     public Table GetFreeTable()
     {
-        List<Table> freeTables = _tables.Where(x => x.IsFree() == true).ToList();
+        List<Table> freeTables = _tables.Where(x => x.IsFree()).ToList();
 
         int numberOfOccupiedTables = _tables.Count - freeTables.Count;
 
@@ -61,5 +61,19 @@ public class RoomManager : MonoBehaviour
     public Door GetDoor()
     {
         return _doors[Random.Range(0, _doors.Count)];
+    }
+
+    public void EnableNewTable()
+    {
+        List<Table> _allTables = new List<Table>(FindObjectsOfType<Table>(true));
+        List<Table> inactiveTables = _allTables.Where(x => x.IsActive() == false).ToList();
+
+        if (inactiveTables.Count > 0)
+        {
+            inactiveTables[0].gameObject.SetActive(true);
+        }
+
+        //Fetch tables
+        _tables = new List<Table>(FindObjectsOfType<Table>());
     }
 }
