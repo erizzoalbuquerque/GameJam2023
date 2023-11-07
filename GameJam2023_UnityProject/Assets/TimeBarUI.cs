@@ -18,7 +18,7 @@ public class TimeBarUI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float normalizedTime = GameManager.Instance.CurrentGameTime / (float) GameManager.Instance.GameDuration;
+        float normalizedTime = GameManager.Instance.NormalizedGameTime;
 
         _progress.position = Vector3.Lerp(_originPoint.position, _endPoint.position, normalizedTime);
     }
