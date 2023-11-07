@@ -16,3 +16,4 @@ MonoBehaviour:
   price: 20
   avgConsumeTime: 2
   img: {fileID: -849242607, guid: d3c44f8523decac4f9ee165b5c02e309, type: 3}
+  imgBig: {fileID: 948771631, guid: 018ee1d0b97aa804a8bdce1229d05df0, type: 3}
