@@ -8,7 +8,6 @@ public class GamePhase : MonoBehaviour
     [SerializeField] int _numberOfCustomersAtSameTime = 1;
     [SerializeField] bool _addNewTable = false;
     [SerializeField] AudioSource _audioSource;
-    [SerializeField] AudioClip _newPhaseSound;
 
     // Start is called before the first frame update
     void OnEnable()
@@ -16,8 +15,8 @@ public class GamePhase : MonoBehaviour
         GameManager.Instance.SetMusicPitch(_musicPitch);
         GameManager.Instance.SetNumberOfCustomersAtSameTime(_numberOfCustomersAtSameTime);
         
-        if (_newPhaseSound != null)
-            _audioSource.PlayOneShot(_newPhaseSound);
+        if (_audioSource != null)
+            _audioSource.Play();
 
         if (_addNewTable)
         {
