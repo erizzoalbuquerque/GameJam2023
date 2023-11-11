@@ -180,6 +180,11 @@ public class Customer : MonoBehaviour
             return;
         }
 
+        if (_state != State.DoingTasks)
+        {
+            return;
+        }
+
         _currentTask.Interact();
     }
 

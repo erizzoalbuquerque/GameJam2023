@@ -189,20 +189,22 @@ public class GameManager : MonoBehaviour
         //Update Ttime
         _currentGameTime = Time.time - _gameStartTime;
 
+        //print(NormalizedGameTime.ToString());
+
         //Update Phase
-        if (NormalizedGameTime < 0.2)
+        if (NormalizedGameTime < 0.15)
         {
             SetPhase(PhaseState.Stage1);
 
-        } else if (NormalizedGameTime < 0.4)
+        } else if (NormalizedGameTime < 0.25)
         {
             SetPhase(PhaseState.Stage2);
 
-        } else if (NormalizedGameTime < 0.6)
+        } else if (NormalizedGameTime < 0.45)
         {
             SetPhase(PhaseState.Stage3);
 
-        } else if (NormalizedGameTime < 0.8)
+        } else if (NormalizedGameTime < 0.75)
         {
             SetPhase(PhaseState.Stage4);
 
