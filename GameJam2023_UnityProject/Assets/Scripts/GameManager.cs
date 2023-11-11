@@ -90,10 +90,6 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        //Check Restart
-        if (Input.GetKeyDown(KeyCode.R))
-            Restart();
-
         switch (_state) 
         {
             case State.Intro:
@@ -146,11 +142,6 @@ public class GameManager : MonoBehaviour
             _phase = _gamePhases[(int) _phaseState - 1];
             _phase.gameObject.SetActive(true);
         }
-    }
-
-    void Restart()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().ToString());
     }
 
     void DoIntroState()
