@@ -46,7 +46,7 @@ public class PlayerMovement : MonoBehaviour
         float currentSpeed = currentVelocity.magnitude;
 
         Vector2 newVelocity;
-        if (Vector2.Angle(currentVelocity,_currentInput) >= _brakeAngleThreshold && currentSpeed > 0f)
+        if (Vector2.Angle(currentVelocity, _currentInput) >= _brakeAngleThreshold && currentSpeed > 0f)
         {
             //Player wants to brake
             newVelocity = currentVelocity.normalized * Mathf.MoveTowards(currentSpeed, 0f, _brakeAcceleration * Time.deltaTime);
