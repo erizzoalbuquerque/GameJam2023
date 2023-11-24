@@ -1,2 +1,3 @@
 /Build
-GameJam2023_UnityProject/.vsconfig
+*.vsconfig
+*.DS_Store
